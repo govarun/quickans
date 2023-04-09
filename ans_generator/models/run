@@ -1,4 +1,4 @@
-time python t5_cvae.py --task test --dataset squad
+time python t5_vae.py --task test --dataset ir_txt
 notify "t5: something is done"
 
 #training runtime: real 124m user 213m

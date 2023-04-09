@@ -5,6 +5,7 @@ import argparse
 import time
 import os
 from utils import parse_data, batchify_data, make_batch_inputs, prepare_eval, test_ppl
+from transformers import AutoModelWithLMHead, AutoTokenizer
 
 from datasets import Dataset
 from transformers import T5TokenizerFast, T5ForConditionalGeneration
@@ -358,8 +359,8 @@ class Seq2SeqTrainer(Trainer):
 
 def train(args):
     # Load the dataset
-    trn_df = parse_data(in_file=f'../../data/{args.dataset}/trn.tsv')
-    val_df = parse_data(in_file=f'../../data/{args.dataset}/val.tsv')
+    trn_df = parse_data(in_file=f'../data/{args.dataset}/trn.tsv')
+    val_df = parse_data(in_file=f'../data/{args.dataset}/val.tsv')
 
     # Load the pre-trained model
     ckpt_path = None
@@ -370,13 +371,16 @@ def train(args):
         # update timestamp and create new path for ckpt
         args.timestamp = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
 
-    tokenizer = T5TokenizerFast.from_pretrained(ckpt_path)
+    tokenizer = AutoTokenizer.from_pretrained("mrm8488/t5-base-finetuned-common_gen")
+    model = AutoModelWithLMHead.from_pretrained("mrm8488/t5-base-finetuned-common_gen")
+
+    #tokenizer = T5TokenizerFast.from_pretrained(ckpt_path)
     print(f"Vocab size: {len(tokenizer)}")
 
     train_data_tokenized = batchify_data(trn_df, tokenizer, args)
     valid_data_tokenized = batchify_data(val_df, tokenizer, args)
 
-    model = Seq2SeqModel.from_pretrained(ckpt_path)
+    #model = Seq2SeqModel.from_pretrained(ckpt_path)
     model = model.to('cuda:0')
     model.from_mean = args.from_mean
     model.scaler = 1.0
@@ -402,7 +406,7 @@ def train(args):
         lr_scheduler_type='constant',
         # misc args
         seed=42,
-        save_total_limit=1,  # limit the total amount of checkpoints
+        save_total_limit=5,  # limit the total amount of checkpoints
         disable_tqdm=False,
         metric_for_best_model="eval_loss",
         load_best_model_at_end=True,
@@ -422,6 +426,7 @@ def train(args):
 
     # Now that we have the trainer set up, we can finetune.
     trainer.train()
+    trainer.save_model()
 
 
 def beam_generate_sentences(batch,
@@ -484,7 +489,7 @@ def sample_sentences(batch,
 
 
 def test(args):
-    te_df = parse_data(in_file=f'../../data/{args.dataset}/tst.tsv')
+    te_df = parse_data(in_file=f'../data/{args.dataset}/tst.tsv')
     print('Data loaded!!!')
 
     # Load the model
