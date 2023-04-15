@@ -493,7 +493,7 @@ def test(args):
     print('Data loaded!!!')
 
     # Load the model
-    if args.timestamp == '0':
+    '''if args.timestamp == '0':
         tokenizer = T5TokenizerFast.from_pretrained(f"{args.model_name}")
     else:
         tokenizer = T5TokenizerFast.from_pretrained(
@@ -505,6 +505,10 @@ def test(args):
     else:
         model = Seq2SeqModel.from_pretrained(
             f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}/checkpoint-{args.ckpt}")
+    '''
+
+    tokenizer = AutoTokenizer.from_pretrained("mrm8488/t5-base-finetuned-common_gen")
+    model = AutoModelWithLMHead.from_pretrained("mrm8488/t5-base-finetuned-common_gen")
     model = model.to('cuda:0')
     model.from_mean = args.from_mean
     model.scaler = args.scaler

@@ -12,7 +12,7 @@ f = open('textbook_text')
 f.write'''
 
 # Get text
-f = open('/home/ishikaa2/quickans/ans_generator/data/textbook_text.txt')
+f = open('/home/ishikaa2/quickans/ans_generator/data/ir_txt/textbook_text.txt')
 text = f.read()
 f.close()
 
