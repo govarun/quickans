@@ -66,6 +66,7 @@ async def list_inbox(graph: Graph):
                 message.from_.email_address is not None
             ):
                 print('  From:', message.from_.email_address.name or 'NONE')
+                print('  From email:', message.from_.email_address.address or 'NONE')
             else:
                 print('  From: NONE')
             print('  Status:', 'Read' if message.is_read else 'Unread')

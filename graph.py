@@ -52,12 +52,15 @@ class Graph:
     async def get_inbox(self):
         query_params = MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters(
             # Only request specific properties
-            select=['from', 'isRead', 'receivedDateTime', 'subject'],
-            # Get at most 25 results
-            top=5,
-            # Sort by received time, newest first
-            orderby=['receivedDateTime DESC']
+            select=['from', 'isRead', 'receivedDateTime', 'subject', 'from'],
+            top=10,
+            filter=["from/emailAddress/address eq 'team@campuswiremail.com'"],
+            orderby=["from/emailAddress/address DESC", 'receivedDateTime DESC']
         )
+        # the below statement works
+        # filter=["receivedDateTime ge 2023-04-01"]
+        # the below statement does not work
+        # filter='from/emailAddress/address eq {}'.format("team@campuswiremail.com")
         request_config = MessagesRequestBuilder.MessagesRequestBuilderGetRequestConfiguration(
             query_parameters= query_params
         )
