@@ -82,7 +82,7 @@ async def send_mail(graph: Graph):
     if user is not None:
         user_email = user.mail or user.user_principal_name
 
-        await graph.send_mail('Testing Microsoft Graph', 'Hello world!', user_email or '')
+        await graph.send_mail('Testing Microsoft Graph', 'Hello world!', "ssehgal4@illinois.edu" or '')
         print('Mail sent.\n')
 
 async def make_graph_call(graph: Graph):

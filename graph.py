@@ -52,9 +52,9 @@ class Graph:
     async def get_inbox(self):
         query_params = MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters(
             # Only request specific properties
-            select=['from', 'isRead', 'receivedDateTime', 'subject', 'content'],
+            select=['from', 'isRead', 'receivedDateTime', 'subject'],
             # Get at most 25 results
-            top=25,
+            top=5,
             # Sort by received time, newest first
             orderby=['receivedDateTime DESC']
         )
@@ -79,6 +79,7 @@ class Graph:
         to_recipient.email_address.address = recipient
         message.to_recipients = []
         message.to_recipients.append(to_recipient)
+        # print()
 
         request_body = SendMailPostRequestBody()
         request_body.message = message
