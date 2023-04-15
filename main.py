@@ -66,6 +66,7 @@ async def list_inbox(graph: Graph):
                 message.from_.email_address is not None
             ):
                 print('  From:', message.from_.email_address.name or 'NONE')
+                print('  From email:', message.from_.email_address.address or 'NONE')
             else:
                 print('  From: NONE')
             print('  Status:', 'Read' if message.is_read else 'Unread')
@@ -82,7 +83,7 @@ async def send_mail(graph: Graph):
     if user is not None:
         user_email = user.mail or user.user_principal_name
 
-        await graph.send_mail('Testing Microsoft Graph', 'Hello world!', user_email or '')
+        await graph.send_mail('Testing Microsoft Graph', 'Hello world!', "ssehgal4@illinois.edu" or '')
         print('Mail sent.\n')
 
 async def make_graph_call(graph: Graph):
