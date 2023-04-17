@@ -53,7 +53,7 @@ class Graph:
         query_params = MessagesRequestBuilder.MessagesRequestBuilderGetQueryParameters(
             # Only request specific properties
             select=['from', 'isRead', 'receivedDateTime', 'subject', 'from', 'bodyPreview', 'body'],
-            top=20,
+            top=5,
             filter=["from/emailAddress/address eq 'team@campuswiremail.com'"],
             orderby=["from/emailAddress/address DESC", 'receivedDateTime DESC']
         )
