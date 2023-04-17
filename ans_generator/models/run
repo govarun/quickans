@@ -1,5 +1,5 @@
-time python t5_vae.py --task test --dataset ir_txt
-notify "t5: something is done"
+time python t5_vae.py --task train --dataset ir_txt
+notify "tmux 510 on idea2: something is done"
 
-#training runtime: real 124m user 213m
-#testing runtime: real 89m user 89m
+# train 124m
+# test

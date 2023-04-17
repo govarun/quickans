@@ -558,22 +558,24 @@ def test(args):
     if args.timestamp == '0':
         os.makedirs(f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}")
 
-    with open(f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}/refs.json", 'w') as f:
+    folder = "/home/ishikaa2/quickans/ans_generator/models/ft_t5"
+
+    with open(f"{folder}/refs.json", 'w') as f:
         f.write(json.dumps(reference_dict, indent=2))
     if args.from_mean:
-        with open(f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}/outs_mean.json", 'w') as f:
+        with open(f"{folder}/outs_mean.json", 'w') as f:
             f.write(json.dumps(prediction_dict, indent=2))
     else:
-        with open(f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}/outs.json", 'w') as f:
+        with open(f"{folder}/outs.json", 'w') as f:
             f.write(json.dumps(prediction_dict, indent=2))
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description='Hyperparams')
     p.add_argument('-t', '--task', type=str, default="train",
                    help="specify the task to do: (train)ing, ft(finetune), (eval)uation")
-    p.add_argument('-c', '--ckpt', type=str, default="193280",
+    p.add_argument('-c', '--ckpt', type=str, default="1",
                    help="Model checkpoint")
-    p.add_argument('-time', '--timestamp', type=str, default='2021-02-14-04-57-04',
+    p.add_argument('-time', '--timestamp', type=str, default='2023-04-15-11-43-56',
                    help="Model checkpoint")
     p.add_argument('-f', '--flag', type=str, default='vae',
                    help="Model checkpoint")
@@ -585,12 +587,12 @@ if __name__ == '__main__':
     p.add_argument('--from_mean', action='store_true', 
                    help="specify whether sample from mean during generation")
     p.add_argument('-bz', '--batch_size', type=int, default=16)
-    p.add_argument('-e', '--epochs', type=int, default=10)
-    p.add_argument('--encoder_max_length', type=int, default=50)
-    p.add_argument('--decoder_max_length', type=int, default=50)
-    p.add_argument('--max_generation_length', type=int, default=60)
-    p.add_argument('--beam_size', type=int, default=10)
-    p.add_argument('--num_return_sequences', type=int, default=10)
+    p.add_argument('-e', '--epochs', type=int, default=60)
+    p.add_argument('--encoder_max_length', type=int, default=200)
+    p.add_argument('--decoder_max_length', type=int, default=200)
+    p.add_argument('--max_generation_length', type=int, default=1500)
+    p.add_argument('--beam_size', type=int, default=30)
+    p.add_argument('--num_return_sequences', type=int, default=1)
     p.add_argument('--local_rank', type=int, default=-1,
                    help="Multiple GPU training")
     args = p.parse_args()
