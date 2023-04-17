@@ -60,6 +60,8 @@ async def list_inbox(graph: Graph):
     if message_page is not None and message_page.value is not None:
         # Output each message's details
         for message in message_page.value:
+            print(type(message))
+            print("Body:", message.body_preview)
             print('Message:', message.subject)
             if (
                 message.from_ is not None and
