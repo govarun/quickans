@@ -178,9 +178,6 @@ Indeed, most of the information a person produces and consumes daily is in
 text form.
 
 
-
-4 Chapter 1 Introduction
-
 Text is the most expressive form of information in the sense that it can be
 used to describe other media such as video or images. Indeed, image search
 engines such as those supported by Google and Bing often rely on matching
@@ -237,8 +234,6 @@ In this first step, the main goal is to connect users (or applications) with the
 relevant text data.
 
 
-6 Chapter 1 Introduction
-
 Once we obtain a small set of most relevant text data, we would need to further
 analyze the text data to help users digest the content and knowledge in the text
 data. This is the text mining step where the goal is to further discover knowledge
@@ -272,9 +267,6 @@ discuss how all the techniques may be integrated in a unified text information s
 techniques, and ideas in information retrieval and text data mining from a practical viewpoint. It includes many hands-on exercises designed with a companion
 software toolkit META to help readers learn how to apply techniques of information
 
-
-
-1.1 Functions of Text Information Systems 7
 
 retrieval and text mining to real-world text data and learn how to experiment with
 and improve some of the algorithms for interesting application tasks. This book
@@ -324,9 +316,6 @@ make a request, to which the system would then respond with relevant information
 This mode of information access is often very useful when a user has an ad hoc
 
 
-
-1.1 Functions of Text Information Systems 9
-
 information need, i.e., a temporary information need (e.g., an immediate need for
 opinions about a product). For example, a search engine like Google generally
 serves a user in pull mode. In the push mode, the system takes initiative to “push”
@@ -362,9 +351,6 @@ their relations (e.g., who met with whom). In practice, of course, any text mini
 view) and information extraction (i.e., NLP view), with information extraction
 serving as enriching the semantic representation of text, which enables pattern
 
-
-
-10 Chapter 1 Introduction
 
 finding algorithms to generate semantically more meaningful patterns than directly working on word or string-level representations of text. Due to our emphasis on covering general and robust techniques that can work for all kinds
 of text data without much manual effort, we mostly adopt the data mining view
@@ -414,10 +400,6 @@ component in a TIS may be called a recommender system (whose goal is to
 recommend relevant items to users) or a filtering system (whose goal is to filter
 out non-relevant items to allow a user to keep only the relevant items). Literature recommender and spam email filter are examples of a recommender
 system and a filtering system, respectively.
-
-
-
-12 Chapter 1 Introduction
 
 Categorization. Classify a text object into one or several of the predefined categories where the categories can vary depending on applications. The categorization component in a TIS can annotate text objects with all kinds of
 meaningful categories, thus enriching the representation text data, which
@@ -536,9 +518,6 @@ Due to the extremely broad scope of the topics that we would like to cover, we h
 to make many tradeoffs between breadth and depth in coverage. When making
 
 
-
-16 Chapter 1 Introduction
-
 such a tradeoff, we have chosen to emphasize the coverage of the basic concepts
 and practical techniques of text data mining at the cost of not being able to cover
 many advanced techniques in detail, and provide some references at the end of
@@ -621,7 +600,6 @@ book. Thanks for reading!
 
 
 
-18 Chapter 1 Introduction
 
 Bibliographic Notes and Further Reading
 There are already multiple excellent text books in information retrieval (IR). Due
@@ -829,7 +807,6 @@ our die look like
 
 
 
-24 Chapter 2 Background
 
 { }, , , , ,
 
@@ -959,9 +936,6 @@ to make inference about a hypothesis based on the observed evidence related to t
 hypothesis.
 
 
-
-26 Chapter 2 Background
-
 Specifically, we may view random variable X as denoting our hypothesis, and Y
 
 as denoting the observed evidence. p(X) can thus be interpreted as our prior belief
@@ -1080,7 +1054,7 @@ H + T
 
 
 
-28 Chapter 2 Background
+
 
 The notation arg max represents the argument (i.e., θ in this case) that makes
 the likelihood function (i.e., p(D | θ)) reach its maximum. Thus, the value of an
@@ -1200,7 +1174,7 @@ p(D | θ)p(θ). (2.13)
 
 
 
-30 Chapter 2 Background
+
 
 Here it is easy to see that the MAP estimate would deviate from the MLE with
 consideration of maximizing the probability of the parameter according to our
@@ -1294,7 +1268,7 @@ and more bits when the event is less likely. Entropy gives us the expected numbe
 
 
 
-32 Chapter 2 Background
+
 
 of bits for any x ∼ X using the formula
 
@@ -1386,7 +1360,7 @@ uncertainty of X.
 
 
 
-34 Chapter 2 Background
+
 
 Another useful concept is mutual information defined on two random variables,
 I (X; Y ), which is defined as the reduction of entropy of X due to knowledge about
@@ -1477,7 +1451,7 @@ many correct labels were predicted). In applications, the training data are gene
 
 
 
-36 Chapter 2 Background
+
 
 all the labelled examples that we can generate, and the test cases are the data points,
 to which we would like to apply our machine learning program.
@@ -1558,7 +1532,7 @@ used by humans to communicate with each other. A deeper understanding
 
 
 
-40 Chapter 3 Text Data Understanding
+
 
 of natural language than semantic analysis is thus to further understand the
 purpose in communication.
@@ -1615,7 +1589,7 @@ John or Bill?
 
 
 
-42 Chapter 3 Text Data Understanding
+
 
 Presupposition. He has quit smoking implies that he smoked before; making
 such inferences in a general way is difficult.
@@ -1766,7 +1740,7 @@ Second, instead of having human to supply rules, the “soft” rules may be lea
 
 
 
-46 Chapter 3 Text Data Understanding
+
 
 automatically from the training data with only minimum help from users who can,
 e.g., specify the elements in a rule.
@@ -1898,7 +1872,7 @@ graph mining algorithms to analyze these syntactic graphs. For example, stylisti
 
 
 
-50 Chapter 3 Text Data Understanding
+
 
 analysis generally requires syntactical structure representation. We can also generate structure-based features that might help us classify the text objects into different categories by looking at their different syntactic structures. If you want to classify articles into different categories corresponding to different authors, then you
 generally need to look at syntactic structures. When we add entities and relations,
@@ -2117,7 +2091,7 @@ meta-toolkit.org/data/20newsgroups.tar.gz. Place it in the meta/data/ directory.
 
 
 
-58 Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis
+
 
 to tokenize the dataset, and a particular classification algorithm to run (for this
 example).
@@ -2304,7 +2278,7 @@ http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets
 http://site.icu-project.org/
 
 
-62 Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis
+
 
 list_filter. this filter either accepts or rejects tokens based on a list. For
 example, one could use a stop word list and reject stop words.
@@ -2427,7 +2401,7 @@ type = "icu-tokenizer"
 
 
 
-64 Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis
+
 
 [[analyzers.filter]]
 
@@ -2542,7 +2516,7 @@ where [OPTION] is one or more of:
 http://sifaka.cs.uiuc.edu/ir/textdatabook/two-cities.txt
 
 
-66 Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis
+
 
 If running ./profile prints out this information, then everything has been
 set up correctly. We’ll look into what each of these options mean in the following
@@ -2828,7 +2802,7 @@ needs, it is possible to collect user feedback, which can be exploited. In this 
 
 
 
-76 Chapter 5 Overview of Text Data Access
+
 
 ad hoc retrieval is much harder, as we do not have much feedback information
 from a user (i.e., little training data for a particular query). Due to the availability of
@@ -2971,7 +2945,7 @@ tion. As a result, even if a search engine can retrieve the most relevant inform
 
 
 
-80 Chapter 5 Overview of Text Data Access
+
 
 a user would still have to sift through a long list of documents and read them in
 detail to fully digest the knowledge buried in text data in order to perform their task
@@ -3064,7 +3038,7 @@ challenging research topic.
 
 
 
-82 Chapter 5 Overview of Text Data Access
+
 
 Because of the difference, the two fields have been traditionally studied in differ
 ent communities with a different application basis. Databases have had widespread
@@ -3155,7 +3129,7 @@ relevant documents, the binary classifier is unlikely accurate. Often the query 
 
 
 
-84 Chapter 5 Overview of Text Data Access
+
 
 either over-constrained or under-constrained. In the case of an over-constrained
 query, there may be no relevant documents matching all the query words, so forcing
@@ -3243,7 +3217,7 @@ model in detail later in this chapter. One of the most effective retrieval model
 
 
 
-88 Chapter 6 Retrieval Models
+
 
 derived from the classific probabilistic retrieval framework is BM25 [Robertson and
 Zaragoza 2009], but since the retrieval function of BM25 is so similar to a vector
@@ -3317,7 +3291,7 @@ regarded as state-of-the-art:
 
 
 
-90 Chapter 6 Retrieval Models
+
 
 . query likelihood [Ponte and Croft 1998]; and
 
@@ -3388,7 +3362,7 @@ case, for example, we can easily see d2 seems to be the closest to the query vec
 
 
 
-92 Chapter 6 Retrieval Models
+
 
 and therefore d2 will be ranked above the others. This is the main idea of the vector
 space model.
@@ -3929,7 +3903,7 @@ that in the sublinear transformation of TF, the first occurrence is very importa
 
 
 
-110 Chapter 6 Retrieval Models
+
 
 and contributes a large weight. If we do that for all the fields, then the same term
 might have gained a large advantage in every field. When we just combine counts
@@ -4137,7 +4111,7 @@ a document to generate a query, the probability of obtaining a word like update
 
 
 
-116 Chapter 6 Retrieval Models
+
 
 would be zero. Clearly, this causes a problem because it would cause all these
 documents to have zero probability of generating this query.
@@ -4187,7 +4161,7 @@ p(q | d) = p(w1 | d) × p(w2 | d) × . . . × p(wn | d). (6.4)
 
 
 
-118 Chapter 6 Retrieval Models
+
 
 In practice, we score the document for this query by using a logarithm of the
 query likelihood:
@@ -4583,7 +4557,7 @@ prior smoothing.
 
 
 
-126 Chapter 6 Retrieval Models
+
 
 Here, we can easily see what change we have made to the MLE. In this form,
 we see that we add a count of μ . p(w | C) to every word, which is proportional
@@ -4844,7 +4818,7 @@ relevant or not.
 
 
 
-134 Chapter 7 Feedback
+
 
 Results:
 d1 3.5
@@ -5055,7 +5029,7 @@ qm = α . q + β . Cr − γ . Cn
 
 
 
-138 Chapter 7 Feedback
+
 
 We have the parameter α controlling the original query term weight, which all
 happened to be one. We have β to control the influence of the relevant centroid
@@ -5168,7 +5142,7 @@ enables feedback information to be incorporated into the query more easily.
 
 
 
-140 Chapter 7 Feedback
+
 
 θD
 
@@ -5335,7 +5309,7 @@ common words.
 
 
 
-144 Chapter 7 Feedback
+
 
 To summarize, this section discussed feedback in the language model approach;
 we transform our original query likelihood retrieval function to a more general KL-
@@ -5371,7 +5345,7 @@ a ranking function using machine learning, i.e., learning to rank techniques; th
 are discussed briefly in Chapter 10 of the book. For a more thorough discussion of
 mining query logs, see the tutorial [Silvestri 2010].
 
-146 Chapter 7 Feedback
+
 
 7.12. In the feedback methods we discussed in this chapter, we assumed we only
 had sets of relevant and non-relevant documents. In reality, we actually have two
@@ -5422,7 +5396,7 @@ used in all current search engines. The techniques for implementing feedback,
 
 
 
-148 Chapter 8 Search Engine Implementation
+
 
 however, highly depend on the learning approaches and applications. Despite this,
 we did discuss some common methods for feedback in the previous chapter.
@@ -5514,7 +5488,7 @@ std::string.
 
 
 
-150 Chapter 8 Search Engine Implementation
+
 
 However, using term IDs, we can instead write std::vector<uint64_t>. This
 data structure takes up less space, and allows true O(1) access to each uint64_t
@@ -5598,7 +5572,7 @@ Doc ID: 24, count: 19, position 1, position 67, position...
 
 
 
-152 Chapter 8 Search Engine Implementation
+
 
 Doc ID: 90, count: 4, position 90, position 93, position...
 
@@ -5671,7 +5645,7 @@ in the forward index and run a scoring function on the each (document, query) pa
 
 
 
-154 Chapter 8 Search Engine Implementation
+
 
 Algorithm 8.1 Term-at-a-time Ranking
 
@@ -5761,7 +5735,7 @@ that particular document.
 
 
 
-156 Chapter 8 Search Engine Implementation
+
 
 Algorithm 8.2 Document-at-a-time Ranking
 
@@ -5859,7 +5833,7 @@ explode in size, not to mention that adding more documents to the index would
 
 
 
-158 Chapter 8 Search Engine Implementation
+
 
 invalidate the stored query vectors (since the new documents might also match the
 original query).
@@ -5960,7 +5934,7 @@ as well. An example of a unary-encoded sequence is
 
 
 
-160 Chapter 8 Search Engine Implementation
+
 
 As long as the lexicon has a pointer to the beginning of a compressed integer, we
 can easily support random access decoding. We also have the property that small
@@ -7357,7 +7331,7 @@ for the relevance of the page being pointed to.
 
 
 
-202 Chapter 10 Web Search
+
 
 On the bottom of Figure 10.6, there are some patterns of links which may indicate
 the utility of a document. For example, on the right side you can see a page has
@@ -7483,7 +7457,7 @@ Figure 10.7 Example of a web graph and the corresponding transition matrix.
 
 
 
-204 Chapter 10 Web Search
+
 
 d1 since d1 doesn’t link to itself and it doesn’t link to d2. Thus, Mij is the probability
 of going from di to dj . Each row’s values should sum to one, because the surfer will
@@ -7872,7 +7846,7 @@ Service Triangle. The three questions you ask are as follows.
 
 
 
-214 Chapter 10 Web Search
+
 
 Users
 Lawyers
@@ -8038,7 +8012,7 @@ describes well what the user likes. Collaborative filtering is to look at what o
 
 
 
-222 Chapter 11 Recommender Systems
+
 
 similar users like and assume that if those other users who are similar to you like an
 item, you may also like it. Note that if we can get user ratings of items, collaborative
@@ -8745,7 +8719,7 @@ everything that has been said about a particular person or a particular entity.
 
 
 
-248 Chapter 12 Overview of Text Data Analysis
+
 
 This can be regarded as mining content to describe the observed world in the
 author’s mind.
@@ -9339,7 +9313,7 @@ conditional entropy is zero which means mutual information reaches its maximum.
 
 
 
-266 Chapter 13 Word Association Mining
+
 
 In order to compute mutual information, we often use a different form of mutual
 information that we can mathematically rewrite as
@@ -11216,7 +11190,7 @@ and other syntactic techniques can be used to find the relation between the enti
 
 
 
-324 Chapter 16 Text Summarization
+
 
 and the actions they perform. Once these actors and roles are discovered, they are
 stored in some internal representation. To generate the actual text, some represen
@@ -11830,7 +11804,7 @@ probability of the particular unique data point.
 
 
 
-344 Chapter 17 Topic Analysis
+
 
 At this point, our problem is a well-defined mathematical optimization prob
 lem where the goal is to find the optimal solution of a constrained maximization
@@ -11912,7 +11886,7 @@ in the estimated unigram language model based on one document, it would be
 
 
 
-346 Chapter 17 Topic Analysis
+
 
 useful to think about why we end up having this problem. It is not hard to see that
 the problem is due to two reasons. First, these common words are very frequent
@@ -12650,7 +12624,7 @@ auxiliary function in the E-step because the auxiliary function is very simple a
 
 
 
-368 Chapter 17 Topic Analysis
+
 
 as a result, our M-step has an analytical solution, thus we were able to bypass the
 explicit computation of this auxiliary function and go directly to find a re-estimate
@@ -14650,7 +14624,7 @@ data. Since text-based prediction can help us infer new knowledge about the worl
 
 
 
-440 Chapter 19 Joint Analysis of Text and Structured Data
+
 
 some of which can even go beyond what’s discussed in the content of text, text-
 based prediction is often very useful for optimizing our decision making, especially
@@ -14721,7 +14695,7 @@ ers to have accurate understanding of text data—it is generally necessary to i
 
 
 
-446 Chapter 20 Toward A Unified System for Text Management and Analysis
+
 
 humans in any text data application. In this sense, a text data management and
 analysis system should serve as an intelligent assistant for users requiring informa

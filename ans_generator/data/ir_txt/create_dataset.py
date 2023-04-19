@@ -44,7 +44,7 @@ for i in range(len(sentences)):
     fname = np.random.choice(['trn.tsv', 'val.tsv', 'tst.tsv'], 1, p=[0.7, 0.1, 0.2])[0]'''
     fname = 'paragraphs.txt'
     file = open(fname, 'a')
-    file.write(f'{output}.\n')
+    file.write(f'{output.strip()}.\n')
     file.close()
 
 
