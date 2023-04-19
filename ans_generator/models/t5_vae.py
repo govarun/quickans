@@ -358,10 +358,6 @@ class Seq2SeqTrainer(Trainer):
 
 
 def train(args):
-    # Load the dataset
-    trn_df = parse_data(in_file=f'../data/{args.dataset}/trn.tsv')
-    val_df = parse_data(in_file=f'../data/{args.dataset}/val.tsv')
-
     # Load the pre-trained model
     ckpt_path = None
     if args.task == 'train':
@@ -377,56 +373,62 @@ def train(args):
     #tokenizer = T5TokenizerFast.from_pretrained(ckpt_path)
     print(f"Vocab size: {len(tokenizer)}")
 
-    train_data_tokenized = batchify_data(trn_df, tokenizer, args)
-    valid_data_tokenized = batchify_data(val_df, tokenizer, args)
+    for i in range(101):
+        # Load the dataset
+        trn_df = parse_data(in_file=f'../data/{args.dataset}/trn.tsv', batch=i)
+        val_df = parse_data(in_file=f'../data/{args.dataset}/val.tsv', batch=i)
 
-    #model = Seq2SeqModel.from_pretrained(ckpt_path)
-    model = model.to('cuda:0')
-    model.from_mean = args.from_mean
-    model.scaler = 1.0
+        train_data_tokenized = batchify_data(trn_df, tokenizer, args)
+        valid_data_tokenized = batchify_data(val_df, tokenizer, args)
 
-    # Training Setup
-    train_args = TrainingArguments(
-        output_dir=f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}",
-        do_train=True,
-        do_eval=True,
-        save_strategy="steps",
-        save_steps=1000,
-        evaluation_strategy="steps",
-        eval_steps=1000,
-        logging_steps=100,
-        # optimization args, the trainer uses the Adam optimizer
-        # and has a linear warmup for the learning rate
-        per_device_train_batch_size=args.batch_size,
-        per_device_eval_batch_size=args.batch_size,
-        gradient_accumulation_steps=1,
-        learning_rate=1e-04,
-        num_train_epochs=args.epochs,
-        warmup_steps=0,
-        lr_scheduler_type='constant',
-        # misc args
-        seed=42,
-        save_total_limit=5,  # limit the total amount of checkpoints
-        disable_tqdm=False,
-        metric_for_best_model="eval_loss",
-        load_best_model_at_end=True,
-        greater_is_better=False,
-        local_rank=args.local_rank
-    )
+        #model = Seq2SeqModel.from_pretrained(ckpt_path)
+        model = model.to('cuda:0')
+        model.from_mean = args.from_mean
+        model.scaler = 1.0
 
-    trainer = Seq2SeqTrainer(
-        num_beams=args.beam_size,
-        max_length=args.decoder_max_length,
-        model=model,
-        args=train_args,
-        train_dataset=train_data_tokenized,
-        eval_dataset=valid_data_tokenized,
-        tokenizer=tokenizer,
-    )
+        # Training Setup
+        train_args = TrainingArguments(
+            output_dir=f"{args.model_name}_{args.dataset}_{args.flag}_{args.timestamp}",
+            do_train=True,
+            do_eval=True,
+            save_strategy="steps",
+            save_steps=1000,
+            evaluation_strategy="steps",
+            eval_steps=1000,
+            logging_steps=100,
+            # optimization args, the trainer uses the Adam optimizer
+            # and has a linear warmup for the learning rate
+            per_device_train_batch_size=args.batch_size,
+            per_device_eval_batch_size=args.batch_size,
+            gradient_accumulation_steps=1,
+            learning_rate=1e-04,
+            num_train_epochs=args.epochs,
+            warmup_steps=0,
+            lr_scheduler_type='constant',
+            # misc args
+            seed=42,
+            save_total_limit=5,  # limit the total amount of checkpoints
+            disable_tqdm=False,
+            metric_for_best_model="eval_loss",
+            load_best_model_at_end=True,
+            greater_is_better=False,
+            local_rank=args.local_rank,
+            fp16=False
+        )
 
-    # Now that we have the trainer set up, we can finetune.
-    trainer.train()
-    trainer.save_model()
+        trainer = Seq2SeqTrainer(
+            num_beams=args.beam_size,
+            max_length=args.decoder_max_length,
+            model=model,
+            args=train_args,
+            train_dataset=train_data_tokenized,
+            eval_dataset=valid_data_tokenized,
+            tokenizer=tokenizer,
+        )
+
+        # Now that we have the trainer set up, we can finetune.
+        trainer.train()
+        trainer.save_model()
 
 
 def beam_generate_sentences(batch,
@@ -586,12 +588,12 @@ if __name__ == '__main__':
     p.add_argument('-s', '--scaler', type=float, default=1.0)
     p.add_argument('--from_mean', action='store_true', 
                    help="specify whether sample from mean during generation")
-    p.add_argument('-bz', '--batch_size', type=int, default=16)
-    p.add_argument('-e', '--epochs', type=int, default=60)
+    p.add_argument('-bz', '--batch_size', type=int, default=1)
+    p.add_argument('-e', '--epochs', type=int, default=30)
     p.add_argument('--encoder_max_length', type=int, default=200)
     p.add_argument('--decoder_max_length', type=int, default=200)
-    p.add_argument('--max_generation_length', type=int, default=1500)
-    p.add_argument('--beam_size', type=int, default=30)
+    p.add_argument('--max_generation_length', type=int, default=700)
+    p.add_argument('--beam_size', type=int, default=10)
     p.add_argument('--num_return_sequences', type=int, default=1)
     p.add_argument('--local_rank', type=int, default=-1,
                    help="Multiple GPU training")

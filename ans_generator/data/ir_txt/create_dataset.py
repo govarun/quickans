@@ -27,12 +27,12 @@ text = ' '.join(text)
 sentences = text.split('.')
 for i in range(len(sentences)):
     # Create the output text (1-3 sentences)
-    num = random.randint(1,3)
+    num = random.randint(5, 8)
     if i == len(sentences) - 1:
         num = 1
-    output = ' '.join(sentences[i : i+num])
+    output = '. '.join(sentences[i : i+num])
 
-    # Take out stop/filler words (left with keywords)
+    '''# Take out stop/filler words (left with keywords)
     keywords = remove_stopwords(output)
 
     # Pick a few keywords to represent the output
@@ -41,9 +41,10 @@ for i in range(len(sentences)):
 
     # Save in train, validation, and test set
     # Format: keywords (space separated) \t output
-    fname = np.random.choice(['trn.tsv', 'val.tsv', 'tst.tsv'], 1, p=[0.7, 0.1, 0.2])[0]
+    fname = np.random.choice(['trn.tsv', 'val.tsv', 'tst.tsv'], 1, p=[0.7, 0.1, 0.2])[0]'''
+    fname = 'paragraphs.txt'
     file = open(fname, 'a')
-    file.write(f'{input}\t{output}\n')
+    file.write(f'{output}.\n')
     file.close()
 
 

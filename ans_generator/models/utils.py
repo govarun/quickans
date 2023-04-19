@@ -7,7 +7,7 @@ from datasets import load_dataset
 import pickle
 
 
-def parse_data(in_file='../../data/GYAFC/em/trn.tsv', split='train', mode='train'):
+def parse_data(in_file='../../data/GYAFC/em/trn.tsv', split='train', mode='train', batch=None):
     if in_file is 'squad':
       dataset = load_dataset('squad_v2', split=split)
       data_df = pd.DataFrame(dataset)
@@ -15,7 +15,8 @@ def parse_data(in_file='../../data/GYAFC/em/trn.tsv', split='train', mode='train
       data_df.columns = ['id', 'source', 'target']
 
       # group by doc
-      grouped = data_df[["id", "source", "target"]].groupby("source").agg(lambda x: list(x))
+      grouped = data_df[["id", "source", "target"]].groupby(
+          "source").agg(lambda x: list(x))
       grouped = grouped.sample(frac=1)
       if mode is 'train':
         grouped = grouped[:16000]
@@ -27,10 +28,15 @@ def parse_data(in_file='../../data/GYAFC/em/trn.tsv', split='train', mode='train
 
     else:
       with open(in_file, 'r') as f:
-          data = f.read().split('\n')
-          data.remove('')
+        data = f.read().split('\n')
+        data.remove('')
       contexted = []
+      if batch is not None:
+        batch_len = int(len(data) / 100)
+      
       for i, line in enumerate(data):
+        add = False
+        if (batch is None) or (batch is not None and batch * batch_len <= i <  (batch+1) * batch_len):
           source_txt = line.split('\t')[0]
           target_txt = line.split('\t')[1]
           row = (i, source_txt, target_txt)
