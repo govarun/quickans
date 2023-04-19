@@ -42,7 +42,7 @@ knowledge buried in the data, which can help make predictions and improve the op
 for managing and analyzing large amounts of text data that can help users manage
 and make use of text data in all kinds of applications.
 
-Text data include all data in the form of natural language text (e.g., English text
+Text data include all data in the form of natural language text (eg, English text
 or Chinese text): all the web pages, social media data such as tweets, news, scientific literature, emails, government documents, and many other kinds of enterprise
 data. Text data play an essential role in our lives. Since we communicate using natural languages, we produce and consume a large amount of text data every day on
 all kinds of topics. The explosive growth of text data makes it impossible, or at least
@@ -64,7 +64,7 @@ for supporting text access, significant progress has been made in this area in r
 application domains. The subtitle of this book suggests that we cover two major
 topics, information retrieval and text mining. These two topics roughly correspond
 to the techniques needed to build the two types of application systems discussed
-above (i.e., search engines and text analytics systems), although the separation of
+above (ie, search engines and text analytics systems), although the separation of
 the two is mostly artificial and only meant to help provide a high-level structure for
 the book, and a sophisticated application system likely would use many techniques
 from both topic areas.
@@ -82,7 +82,7 @@ a systematic introduction to many of these approaches, with an emphasis on cover
 useful text information systems.
 
 This book is primarily based on the materials that the authors have used for
-teaching a course on the topic of text data management and analysis (i.e., CS410
+teaching a course on the topic of text data management and analysis (ie, CS410
 Text Information Systems) at the University of Illinois at Urbana–Champaign, as
 well as the two Massive Open Online Courses (MOOCs) on “Text Retrieval and
 Search Engines” and “Text Mining and Analytics” taught by the first author on
@@ -114,7 +114,7 @@ need to use search and browsing functions to reach and examine the most relevant
 support data to the pattern.
 
 Another feature that sets this book apart is the availability of a companion
-toolkit for information retrieval and text mining, i.e., the META toolkit (available at
+toolkit for information retrieval and text mining, ie, the META toolkit (available at
 https://meta-toolkit.org/), which contains implementations of many techniques
 discussed in the book. Many exercises in the book are also designed based on this
 toolkit to help readers acquire practical skills of experimenting with the learned
@@ -156,8 +156,8 @@ In the last two decades, we have experienced an explosive growth of online infor
 on earth. Printed documents of all kinds comprise only .03% of the total.” [Lyman
 et al. 2003]
 
-A large amount of online information is textual information (i.e., in natural language text). For example, according to the Berkeley study cited above: “Newspapers
-represent 25 terabytes annually, magazines represent 10 terabytes . . . office documents represent 195 terabytes. It is estimated that 610 billion emails are sent each
+A large amount of online information is textual information (ie, in natural language text). For example, according to the Berkeley study cited above: “Newspapers
+represent 25 terabytes annually, magazines represent 10 terabytes, office documents represent 195 terabytes. It is estimated that 610 billion emails are sent each
 year representing 11,000 terabytes.” Of course, there are also blog articles, forum
 posts, tweets, scientific literature, government documents, etc. Roe [2012] updates
 the email count from 610 billion emails in 2003 to 107 trillion emails sent in 2010.
@@ -188,7 +188,7 @@ The explosive growth of online text information has created a strong demand
 for intelligent software tools to provide the following two related services to help
 people manage and exploit big text data.
 
-Text Retrieval. The growth of text data makes it impossible for people to consume the data in a timely manner. Since text data encode much of our accumulated knowledge, they generally cannot be discarded, leading to, e.g., the
+Text Retrieval. The growth of text data makes it impossible for people to consume the data in a timely manner. Since text data encode much of our accumulated knowledge, they generally cannot be discarded, leading to, eg, the
 accumulation of a large amount of literature data which is now beyond any
 individual’s capacity to even skim over. The rapid growth of online text information also means that no one can possibly digest all the new information
 created on a daily basis. Thus, there is an urgent need for developing intelligent text retrieval systems to help people get access to the needed relevant
@@ -196,7 +196,7 @@ information quickly and accurately, leading to the recent growth of the web
 search industry. Indeed, web search engines like Google and Bing are now an
 essential part of our daily life, serving millions of queries daily. In general,
 search engines are useful anywhere there is a relatively large amount of text
-data (e.g., desktop search, enterprise search or literature search in a specific
+data (eg, desktop search, enterprise search or literature search in a specific
 domain such as PubMed).
 
 Text Mining. Due to the fact that text data are produced by humans for communication purposes, they are generally rich in semantic content and often contain valuable knowledge, information, opinions, and preferences of people.
@@ -222,13 +222,13 @@ text data in any natural language, and about any topic. This book intends to pro
 a systematic introduction to many of these approaches, with an emphasis on covering the most useful knowledge and skills required to build a variety of practically
 useful text information systems.
 
-The two services discussed above (i.e., text retrieval and text mining) conceptually correspond to the two natural steps in the process of analyzing any “big
+The two services discussed above (ie, text retrieval and text mining) conceptually correspond to the two natural steps in the process of analyzing any “big
 text data” as shown in Figure 1.1. While the raw text data may be large, a specific
 application often requires only a small amount of most relevant text data, thus
 conceptually, the very first step in any application should be to identify the relevant
 text data to a particular application or decision-making problem and avoid the unnecessary processing of large amounts of non-relevant text data. This first step of
 converting the raw big text data into much smaller, but highly relevant text data is
-often accomplished by techniques of text retrieval with help from users (e.g., users
+often accomplished by techniques of text retrieval with help from users (eg, users
 may use multiple queries to collect all the relevant text data for a decision problem).
 In this first step, the main goal is to connect users (or applications) with the most
 relevant text data.
@@ -249,7 +249,7 @@ framework.
 
 It is worth pointing out that put in the context of “big data,” text data is very different from other kinds of data because it is generally produced directly by humans
 and often also meant to be consumed by humans as well. In contrast, other data
-tend to be machine-generated data (e.g., data collected by using all kinds of physical sensors). Since humans can understand text data far better than computers can,
+tend to be machine-generated data (eg, data collected by using all kinds of physical sensors). Since humans can understand text data far better than computers can,
 involvement of humans in the process of mining and analyzing text data is absolutely crucial (much more necessary than in other big data applications), and how
 to optimally divide the work between humans and machines so as to optimize the
 collaboration between humans and machines and maximize their “combined intelligence” with minimum human effort is a general challenge in all applications of
@@ -281,7 +281,7 @@ Information Access. This capability gives a user access to the useful informatio
 information with the right user at the right time. For example, a search engine enables a user to access text information through querying, whereas a
 recommender system can push relevant information to a user as new information items become available. Since the main purpose of Information Access
 is to connect a user with relevant information, a TIS offering this capability generally only does minimum analysis of text data sufficient for matching
-relevant information with a user’s information need, and the original inforation items (e.g., web pages) are often delivered to the user in their original
+relevant information with a user’s information need, and the original inforation items (eg, web pages) are often delivered to the user in their original
 form, though summaries of the delivered items are often provided. From the
 perspective of text analysis, a user would generally need to read the information items to further digest and exploit the delivered information.
 
@@ -316,12 +316,12 @@ make a request, to which the system would then respond with relevant information
 This mode of information access is often very useful when a user has an ad hoc
 
 
-information need, i.e., a temporary information need (e.g., an immediate need for
+information need, ie, a temporary information need (eg, an immediate need for
 opinions about a product). For example, a search engine like Google generally
 serves a user in pull mode. In the push mode, the system takes initiative to “push”
 (recommend) to the user an information item that the system believes is useful to
 the user. The push mode often works well when the user has a relatively stable
-information need (e.g., hobby of a person); in such a case, a system can know
+information need (eg, hobby of a person); in such a case, a system can know
 “in advance” a user’s preferences and interests, making it feasible to recommend
 information to a user without having the user to take the initiative. We cover both
 modes of information access in this book.
@@ -342,13 +342,13 @@ text mining, which can be defined as mining text data to discover useful knowled
 (NLP) community have developed methods for text mining, although the two
 communities tend to adopt slightly different perspective on the problem. From
 a data mining perspective, we may view text mining as mining a special kind
-of data, i.e., text. Following the general goals of data mining, the goal of text
+of data, ie, text. Following the general goals of data mining, the goal of text
 mining would naturally be regarded as to discover and extract interesting patterns in text data, which can include latent topics, topical trends, or outliers.
 From an NLP perspective, text mining can be regarded as to partially understand natural language text, convert text into some form of knowledge represen-
 tation and make limited inferences based on the extracted knowledge. Thus a
-key task is to perform information extraction, which often aims to identify and extract mentions of various entities (e.g., people, organization, and location) and
-their relations (e.g., who met with whom). In practice, of course, any text mining applications would likely involve both pattern discovery (i.e., data mining
-view) and information extraction (i.e., NLP view), with information extraction
+key task is to perform information extraction, which often aims to identify and extract mentions of various entities (eg, people, organization, and location) and
+their relations (eg, who met with whom). In practice, of course, any text mining applications would likely involve both pattern discovery (ie, data mining
+view) and information extraction (ie, NLP view), with information extraction
 serving as enriching the semantic representation of text, which enables pattern
 
 
@@ -378,8 +378,8 @@ user’s query in the case of a search engine, and more effectively processed in
 in text analysis. Current NLP techniques mostly rely on statistical machine learning
 enhanced with limited linguistic knowledge with variable depth of understanding
 of text data; shallow techniques are robust, but deeper semantic analysis is only
-feasible for very limited domains. Some TIS capabilities (e.g., summarization) tend
-to require deeper NLP than others (e.g., search). Most text information systems use
+feasible for very limited domains. Some TIS capabilities (eg, summarization) tend
+to require deeper NLP than others (eg, search). Most text information systems use
 very shallow NLP, where text would simply be represented as a “bag of words,” where
 words are basic units for representation and the order of words is ignored (although
 the counts of words are retained). However, a more sophisticated representation is also possible, which may be based on recognized entities and relations or other
@@ -425,7 +425,7 @@ in multiple ways, including support of navigation (along edges and paths of
 the graph) and further application of graph mining algorithms to discover
 interesting entity-relation patterns.
 
-Clustering. Discover groups of similar text objects (e.g., terms, sentences, documents, . . . ). The clustering component of a TIS plays an important role in
+Clustering. Discover groups of similar text objects (eg, terms, sentences, documents,  ). The clustering component of a TIS plays an important role in
 helping users explore an information space. It uses empirical data to create
 meaningful structures that can be useful for browsing text objects and obtaining a quick understanding of a large text data set. It is also useful for
 discovering outliers by identifying the items that do not form natural clusters
@@ -470,7 +470,7 @@ implementation of retrieval systems (Chapter 8), and evaluation of retrieval
 systems (Chapter 9). It then covers web search engines, the most important
 application of information retrieval so far (Chapter 10), where techniques for
 analyzing links in text data for improving ranking of text objects are introduced and application of supervised machine learning to combine multiple features for ranking is briefly discussed. The last chapter in this part (Chapter 11) covers recommender systems which provide a “push” mode of information access, as opposed to the “pull” mode of information access supported
-by a typical search engine (i.e., querying by users).
+by a typical search engine (ie, querying by users).
 
 Part III. Text Data Analysis. This part consists of Chapters 12–19, covering a
 variety of techniques for analyzing text data to facilitate user digestion of text
@@ -479,14 +479,14 @@ where we may view text data as data generated by humans as “subjective sensors
 more general context of data analysis and mining in general, and facilitates
 the discussion of joint analysis of text and non-text data. This is followed by
 multiple chapters covering a number of the most useful general techniques
-for analyzing text data without or with only minimum human effort. Specifically, Chapter 13 discusses techniques for discovering two fundamental semantic relations between lexical units in text data, i.e., paradigmatic relations
+for analyzing text data without or with only minimum human effort. Specifically, Chapter 13 discusses techniques for discovering two fundamental semantic relations between lexical units in text data, ie, paradigmatic relations
 and syntagmatic relations, which can be regarded as an example of discovering knowledge about the natural language used to generate the text data
-(i.e., linguistic knowledge). Chapter 14 and Chapter 15 cover, respectively, two
+(ie, linguistic knowledge). Chapter 14 and Chapter 15 cover, respectively, two
 closely related techniques to generate and associate meaningful structures
-or annotations with otherwise unorganized text data, i.e., text clustering and
+or annotations with otherwise unorganized text data, ie, text clustering and
 text categorization. Chapter 16 discusses text summarization useful for facilitating human digestion of text information. Chapter 17 provides a detailed
 discussion of an important family of probabilistic approaches to discovery
-and analysis of topical patterns in text data (i.e., topic models). Chapter 18
+and analysis of topical patterns in text data (ie, topic models). Chapter 18
 discusses techniques for analyzing sentiment and opinions expressed in text
 data, which are key to discovery of knowledge about preferences, opinions,
 and behavior of people based on analyzing the text data produced by them.
@@ -574,7 +574,7 @@ META exercises is strongly encouraged. Programming assignments can be created fr
 nature of the toolkit, additional programming experiments may be created by
 extending the existing system or implementing other well-known algorithms
 that do not come with META by default. Finally, students may use components of META they learned through the exercises to complete a larger final
-programming project. Using different corpora with the toolkit can yield different project challenges, e.g., review summary vs. sentiment analysis.
+programming project. Using different corpora with the toolkit can yield different project challenges, eg, review summary vs. sentiment analysis.
 
 Practitioners. Most readers in industry would most likely use this book as a
 reference, although we also hope that it may serve as some inspiration in
@@ -626,12 +626,12 @@ Readers who want to know more about the history of IR research and the major
 early milestones should take a look at the collection of readings in Sparck Jones
 and Willett [1997].
 
-The topic of text mining has also been covered in multiple books (e.g., Feldman
+The topic of text mining has also been covered in multiple books (eg, Feldman
 and Sanger [2007]). A major difference between this book and those is our emphasis on the integration of text mining and information retrieval with a belief that
 any text data application system must involve humans in the loop and search engines are essential components of any text mining systems to support two essential
 functions: (1) help convert a large raw text data set into a much smaller, but more
-relevant text data set which can be efficiently anlayzed by using a text mining algorithm (i.e., data reduction) and (2) help users verify the source text articles from
-which knowledge is discovered by a text mining algorithm (i.e., knowledge provenance). As a result, this book provides a more complete coverage of techniques
+relevant text data set which can be efficiently anlayzed by using a text mining algorithm (ie, data reduction) and (2) help users verify the source text articles from
+which knowledge is discovered by a text mining algorithm (ie, knowledge provenance). As a result, this book provides a more complete coverage of techniques
 required for developing big text data applications.
 
 The focus of this book is on covering algorithms that are general and robust,
@@ -645,7 +645,7 @@ Bibliographic Notes and Further Reading 19
 of some key techniques important for text mining, notably the information extraction (IE) techniques which are essential for text mining. We decided not to cover IE
 because the IE techniques tend to be language-specific and require non-trivial manual work by humans. Another reason is that many IE techniques rely on supervised
 machine learning approaches, which are well covered in many existing machine
-learning books (see, e.g., Bishop 2006, Mitchell 1997). Readers who are interested
+learning books (see, eg, Bishop 2006, Mitchell 1997). Readers who are interested
 in knowing more about IE can start with the survey book [Sarawagi 2008] and review
 articles [Jiang 2012].
 
@@ -658,8 +658,8 @@ learn more about user interface design. An excellent reference to start with is 
 [2009], which also has a detailed coverage of information visualization.
 
 Finally, due to our emphasis on breadth, the book does not cover any component algorithm in depth. To know more about some of the topics, readers can
-further read books in natural language processing (e.g., Jurafsky and Martin 2009,
-Manning and Schütze 1999), advanced books on IR (e.g., Baeza-Yates and RibeiroNeto [2011]), and books on machine learning (e.g., Bishop [2006]). You may find
+further read books in natural language processing (eg, Jurafsky and Martin 2009,
+Manning and Schütze 1999), advanced books on IR (eg, Baeza-Yates and RibeiroNeto [2011]), and books on machine learning (eg, Bishop [2006]). You may find
 more specific recommendations of readings relevant to a particular topic in the
 Bibliographic Notes at the end of each chapter that covers the corresponding topic.
 
@@ -716,7 +716,7 @@ chance that x is either red or orange.
 In our text application tasks, we usually have as V , the vocabulary of some text
 corpus. For example, the vocabulary could be
 
-V = {a, and, apple, . . . , zap, zirconium, zoo}
+V = {a, and, apple,  , zap, zirconium, zoo}
 
 and we could model the text data with a probability distribution θ . Thus, if we have
 some word w we can write p(w | θ) (read as the probability of w given θ ). If w is the
@@ -758,7 +758,7 @@ pθ(ω) = 1. (2.3)
 
 Note that, strictly speaking, an event is defined as a subset of the probability
 space , and we say that an event happens if and only if the outcome from a random
-experiment (i.e., randomly drawing an outcome from ) is in the corresponding
+experiment (ie, randomly drawing an outcome from ) is in the corresponding
 subset of outcomes defined by the event. Thus, it is easy to understand that the
 special event corresponding to the empty subset is an impossible event with a
 probability of zero, whereas the special event corresponding to the complete set
@@ -881,8 +881,8 @@ p(Y = y)
 2.1 Basics of Probability and Statistics 25
 
 The numerator p(X = x , Y = y) is the probability of exactly the configuration
-we’re looking for (i.e., both x and y have been observed), which is normalized by
-p(Y = y), the probability that the condition is true (i.e., y has been observed). Using
+we’re looking for (ie, both x and y have been observed), which is normalized by
+p(Y = y), the probability that the condition is true (ie, y has been observed). Using
 this knowledge, we can calculate p(xC = green | xS = circle):
 
 p(xC = green | xS = circle) = p(xC = green, xS = circle)
@@ -995,11 +995,11 @@ and t denote heads and tails, respectively? Well, it is easy to see that the pro
 
 2.1 Basics of Probability and Statistics 27
 
-of observing this sequence is simply the product of observing each event, i.e.,
+of observing this sequence is simply the product of observing each event, ie,
 θ × (1 − θ) × θ × θ × (1 − θ) = θ3(1 − θ)2 with no adjustment for different orders
 of observing three heads and two tails.
 
-The more commonly used multinomial distribution in text analysis, which models the probability of seeing a word in a particular scenario (e.g., in a document), is
+The more commonly used multinomial distribution in text analysis, which models the probability of seeing a word in a particular scenario (eg, in a document), is
 very similar to this Bernoulli distribution, just with more than two outcomes.
 
 2.1.4 Maximum Likelihood Parameter Estimation
@@ -1010,10 +1010,10 @@ discussed above where n = 5:
 D = {h, t , h, h, t}.
 
 Now we would like to figure out what θ is based on the observed data. Using
-maximum likelihood estimation (MLE), we choose the θ that has the highest likelihood given our data, i.e., choose the θ such that the probability of observed data
+maximum likelihood estimation (MLE), we choose the θ that has the highest likelihood given our data, ie, choose the θ such that the probability of observed data
 is maximized.
 
-To compute the MLE, we would first write down the likelihood function, i.e.,
+To compute the MLE, we would first write down the likelihood function, ie,
 p(D | θ), which is θ3(1 − θ)2 as we explained earlier. The problem is thus reduced
 to find the θ that maximizes the function f (θ) = θ3(1 − θ)2. Equivalently, we can
 attempt to maximize the log-likelihood: log f (θ) = 3 log θ + 2 log(1 − θ), since logarithm transformation preserves the order of values. Using knowledge of calculus,
@@ -1056,8 +1056,8 @@ H + T
 
 
 
-The notation arg max represents the argument (i.e., θ in this case) that makes
-the likelihood function (i.e., p(D | θ)) reach its maximum. Thus, the value of an
+The notation arg max represents the argument (ie, θ in this case) that makes
+the likelihood function (ie, p(D | θ)) reach its maximum. Thus, the value of an
 arg max expression stays the same if we perform any monotonic transformation of
 the function inside arg max. This is why we could use the logarithm transformation
 in the example above, which made it easier to compute the derivative.
@@ -1139,7 +1139,7 @@ That is, the posterior is proportional to the prior times the likelihood.
 The posterior distribution of the parameter θ fully characterizes the uncertainty
 
 of the parameter value and can be used to infer any quantity that depends on the
-parameter value, including computing a point estimate of the parameter (i.e., a
+parameter value, including computing a point estimate of the parameter (ie, a
 single value of the parameter). There are multiple ways to compute a point estimate
 based on a posterior distribution. One possibility is to compute the mean of the
 posterior distribution, which is given by the weighted sum of probabilities and the
@@ -1190,14 +1190,14 @@ how we might apply a probabilistic model to text analysis.
 
 In general, in text processing, we would be interested in a probabilistic model
 for text data, which defines distributions over sequences of words. Such a model is
-often called statistical language model, or a generative model for text data (i.e., a
+often called statistical language model, or a generative model for text data (ie, a
 probabilistic model that can be used for sampling sequences of words).
 
 As we started to explain previously, we usually treat the sample space  as V , the
 set of all observed words in our corpus. That is, we define probability distributions
 over words from our dataset, which are essentially multinomial distributions if
 we do not consider the order of words. While there are many more sophisticated
-models for text data (see, e.g., Jelinek [1997]), this simplest model (often called
+models for text data (see, eg, Jelinek [1997]), this simplest model (often called
 unigram language model) is already very useful for a number of tasks in text data
 management and analysis due to the fact that the words in our vocabulary are very
 well designed meaningful basic units for human communications.
@@ -1314,7 +1314,7 @@ whereas for a completely biased coin with p(X = 1) = 1, p(X = 0) = 0 we would ha
 
 H(X) = −0 log2 0 − 1 log2 1 = 0.
 
-For this example, we had only two possible outcomes (i.e., a binary random
+For this example, we had only two possible outcomes (ie, a binary random
 variable). As we can see from the formula, this idea of entropy easily generalizes
 to random variables with more than two outcomes; in those cases, the sum is over
 more than two elements.
@@ -1355,7 +1355,7 @@ of X given that we observe Y , where the expectation is taken under the distribu
 of all possible values of Y . Intuitively, if X is completely determined by Y , then
 H(X | Y ) = 0 since once we know Y , there would be no uncertainty in X, whereas if
 X and Y are independent, then H(X | Y ) would be the same as the original entropy
-of X, i.e., H(X | Y ) = H(X) since knowing Y does not help at all in resolving the
+of X, ie, H(X | Y ) = H(X) since knowing Y does not help at all in resolving the
 uncertainty of X.
 
 
@@ -1364,7 +1364,7 @@ uncertainty of X.
 
 Another useful concept is mutual information defined on two random variables,
 I (X; Y ), which is defined as the reduction of entropy of X due to knowledge about
-another random variable Y , i.e.,
+another random variable Y , ie,
 
 I (X; Y ) = H(X) − H(X | Y ). (2.15)
 
@@ -1423,7 +1423,7 @@ also discussed later.
 In classification as well as regression, the (input) data instance x is often represented as a feature vector where each feature provides a potential clue about which
 y value is most likely the value of f (x). What the computer learns from the training
 data is an optimal way to combine these features with weights on them to indicate their importance and their influence on the final function value y. “Optimal”
-here simply means that the prediction error on the training data is minimum, i.e.,
+here simply means that the prediction error on the training data is minimum, ie,
 the predicted ŷ values are maximally consistent with the true y values in the training data.
 
 More formally, let our collection of objects be X such that xi ∈ X is a feature
@@ -1446,7 +1446,7 @@ labels of the data. In fact, we will have to use the true labels in order to lea
 function f (.) to take unseen feature vectors and classify them. For this reason, when
 studying machine learning algorithms, we often split our corpus X into two parts:
 training data and testing data. The training portion is used to build the classifier,
-and the testing portion is used to evaluate the performance (e.g., determine how
+and the testing portion is used to evaluate the performance (eg, determine how
 many correct labels were predicted). In applications, the training data are generally
 
 
@@ -1457,7 +1457,7 @@ all the labelled examples that we can generate, and the test cases are the data 
 to which we would like to apply our machine learning program.
 
 But what does the function f (.) actually do? Consider a very simple example
-that determines whether a news article has positive or negative sentiment, i.e.,
+that determines whether a news article has positive or negative sentiment, ie,
 Y = {positive, negative}:
 
 
@@ -1495,7 +1495,7 @@ in many textbooks such as Hodges and Lehmann [1970]. An excellent introduction
 to the maximum likelihood estimation can be found in Myung [2003]. An accessible comprehensive introduction to Bayesian statistics is given in the book Bayesian
 Data Analysis [Gelman et al. 1995]. Cover and Thomas [1991] provide a comprehensive introduction to information theory. There are many books on machine learning
 where a more rigorous introduction to the basic concepts in machine learning as
-well as many specific machine learning approaches can be found (e.g., Bishop 2006,
+well as many specific machine learning approaches can be found (eg, Bishop 2006,
 Mitchell 1997).
 
 
@@ -1512,7 +1512,7 @@ it is quite challenging for a computer to make sense of one. In general, this ma
 involve the following tasks.
 
 Lexical analysis. The purpose of lexical analysis is to figure out what the basic
-meaningful units in a language are (e.g., words in English) and determine
+meaningful units in a language are (eg, words in English) and determine
 the meaning of each word. In English, it is rather easy to determine the
 boundaries of words since they are separated by spaces, but it is non-trivial to
 find word boundaries in some other languages such as Chinese where there
@@ -1527,7 +1527,7 @@ whole sentence or a larger unit based on the meanings of words and their
 syntactic structure.
 
 Pragmatic analysis. The purpose of pragmatic analysis is to determine meaning
-in context, e.g., to infer the speech acts of language. Natural language is
+in context, eg, to infer the speech acts of language. Natural language is
 used by humans to communicate with each other. A deeper understanding
 
 
@@ -1550,7 +1550,7 @@ a and boy form a noun phrase. So do the and playground, and on the playground is
 prepositional phrase. Semantic analysis is to map noun phrases to entities and verb
 phrases to relations so as to obtain a formal representation of the meaning of the
 sentence. For example, the noun phrase a boy can be mapped to a semantic entity
-denoting a boy (i.e., b1), and a dog to an entity denoting a dog (i.e., d1). The verb
+denoting a boy (ie, b1), and a dog to an entity denoting a dog (ie, d1). The verb
 phrase can be mapped to a relation predicate chasing(d1,b1,p1) as shown in
 the figure. Note that with this level of understanding, one may also infer additional
 information based on any relevant common sense knowledge. For example, if we
@@ -1570,7 +1570,7 @@ communication because we assume the hearer or reader possesses such knowledge
 which we assume the hearer/reader knows how to resolve (thus there’s no need to
 waste words to clarify them). As a result, natural language text is full of ambiguity,
 and resolving ambiguity would generally involve reasoning with a large amount of
-common-sense knowledge, which is a general difficult challenge in artificial intelligence. In this sense, NLP is “AI complete”, i.e., as difficult as any other difficult
+common-sense knowledge, which is a general difficult challenge in artificial intelligence. In this sense, NLP is “AI complete”, ie, as difficult as any other difficult
 problems in artificial intelligence.
 
 The following are a few examples of specific challenges in natural language
@@ -1638,7 +1638,7 @@ learning techniques with linguistic knowledge only playing a somewhat secondary
 role. These statistical NLP techniques are successful for some of the NLP tasks. Part
 of speech tagging is a relatively easy task, and state-of-the-art POS taggers may have
 a very high accuracy (above 97% on news data). Parsing is more difficult, though
-partial parsing can probably be done with reasonably high accuracy (e.g., above
+partial parsing can probably be done with reasonably high accuracy (eg, above
 90% for recognizing noun phrases)1.
 
 However, full structure parsing remains very difficult, mainly because of ambiguities. Semantic analysis is even more difficult, only successful for some aspects
@@ -1729,7 +1729,7 @@ I remember X → Do you often think of X?
 
 always → Can you think of a specific example?
 
-Such rules enable the system to directly perform the task, i.e., making a conversation, without necessarily trying to understand the real meaning of words and
+Such rules enable the system to directly perform the task, ie, making a conversation, without necessarily trying to understand the real meaning of words and
 determining the meaning of the entire sentence.
 
 Such a pattern-based way of solving a problem has turned out to be quite powerful. Indeed, modern machine learning approaches to natural language understanding are essentially based on this and in many ways are similar to the Eliza
@@ -1743,7 +1743,7 @@ Second, instead of having human to supply rules, the “soft” rules may be lea
 
 
 automatically from the training data with only minimum help from users who can,
-e.g., specify the elements in a rule.
+eg, specify the elements in a rule.
 
 Even difficult tasks like machine translation can be done by such statistical
 approaches. The most useful NLP techniques for building a TIS are statistical approaches which tend to be much more robust than symbolic approaches. Statistical
@@ -1944,9 +1944,9 @@ The simplest language model is the unigram language model in which we
 assume that a word sequence results from generating each word independently.
 Thus, the probability of a sequence of words would be equal to the product of the
 probability of each word. Formally, let V be the set of words in the vocabulary, and
-w1, . . . , wn a word sequence, where wi ∈ V is a word. We have
+w1,  , wn a word sequence, where wi ∈ V is a word. We have
 
-p(w1, . . . , wn) =
+p(w1,  , wn) =
 n∏
 
 i=1
@@ -1962,7 +1962,7 @@ w∈V p(w) = 1. Such a model
 essentially specifies a multinomial distribution over all the words.
 
 
-Given a language model θ , in general, the probabilities of generating two different documents D1 and D2 would be different, i.e., p(D1 | θ) = p(D2 | θ). What
+Given a language model θ , in general, the probabilities of generating two different documents D1 and D2 would be different, ie, p(D1 | θ) = p(D2 | θ). What
 kind of documents would have higher probabilities? Intuitively it would be those
 documents that contain many occurrences of the high probability words according to p(w | θ). In this sense, the high probability words of θ can indicate the topic
 captured by θ .
@@ -1973,15 +1973,15 @@ D is a text mining paper, we would expect p(D | θ1) > p(D | θ2), while if D′
 article discussing diet control, we would expect the opposite: p(D′ | θ1) < p(D′ | θ2).
 We can also expect p(D | θ1) > p(D′ | θ1) and p(D | θ2) < p(D′ | θ2).
 
-Now suppose we have observed a document D (e.g., a short abstract of a text
+Now suppose we have observed a document D (eg, a short abstract of a text
 mining paper) which is assumed to be generated using a unigram language model
-θ , and we would like to infer the underlying model θ (i.e., estimate the probabilities
+θ , and we would like to infer the underlying model θ (ie, estimate the probabilities
 of each word w, p(w | θ)) based on the observed D. This is a standard problem
 in statistics called parameter estimation and can be solved using many different
 methods.
 
 One popular method is the maximum likelihood (ML) estimator, which seeks a
-model θ̂ that would give the observed data the highest likelihood (i.e., best explain
+model θ̂ that would give the observed data the highest likelihood (ie, best explain
 the data):
 
 θ̂ = arg maxθ p(D | θ). (3.2)
@@ -2016,7 +2016,7 @@ the maximum likelihood estimator later by using techniques called smoothing.
 
 Although extremely simple, a unigram language model is already very useful
 for text analysis. For example, Figure 3.6 shows three different unigram language
-models estimated on three different text data samples, i.e., a general English text
+models estimated on three different text data samples, ie, a general English text
 database, a computer science research article database, and a text mining research
 paper. In general, the words with the highest probabilities in all the three models
 are those functional words in English because such words are frequently used
@@ -2034,7 +2034,7 @@ model tells us which words occur frequently in the context of “computer.” Ho
 the most frequent words according to this model would likely be functional words
 in English or words that are simply common in the data, but have no strong association with computer. To filter out such common words, we need a model for such
 words which can then tell us what words should be filtered. It is easy to see that the
-general English language model (i.e., a background language model) would serve 
+general English language model (ie, a background language model) would serve 
 the purpose well. So we can use the background language model to normalize the
 model p(w | computer) and obtain a probability ratio for each word. Words with
 high ratio values can then be assumed to be semantically associated with computer
@@ -2213,7 +2213,7 @@ file_corpus. each document is its own file, and the name of the file becomes
 the name of the document. There is also a corpusname-full-corpus.txt
 
 which contains (on each line) a required class label for each document followed by the path to the file on disk. If there are no class labels, a placeholder
-label should be required, e.g., “[none]”.
+label should be required, eg, “[none]”.
 
 gz_corpus. similar to line_corpus, but each of its files and metadata files are
 compressed using gzip compression:
@@ -2635,7 +2635,7 @@ Like POS-tagging, the parsing may also take a minute or two to complete.
 frequency counting. This simply counts how many times each unique word appears
 in a document (or corpus). Viewing a descending list of words sorted by frequency
 can give you an idea of what the document is about. Intuitively, similar documents
-should have some of the same high-frequency words . . . not including stop words.
+should have some of the same high-frequency words  not including stop words.
 
 Instead of single words, we can also look at strings of n words, called n-grams.
 Consider this sentence: I took a vacation to go to a beach.
@@ -2656,7 +2656,7 @@ Exercises 69
 
 3-grams (trigrams):
 
-{I took a : 1, took a vacation : 1, a vacation to : 1, . . .}
+{I took a : 1, took a vacation : 1, a vacation to : 1, }
 
 As we will see in this text, the unigram words document representation is of
 utmost importance for text representation. This vector of counts representation
@@ -2731,7 +2731,7 @@ how these modes fit together along with querying and browsing.
 
 In pull mode, the user initiates the access process to find the relevant text data,
 typically by using a search engine. This mode of text access is essential when a user
-has an ad hoc information need, i.e., a temporary information need that might
+has an ad hoc information need, ie, a temporary information need that might
 disappear once the need is satisfied. In such a case, the user can use a query to
 find relevant information with a search engine. For example, a user may have a
 need to buy a product and thus be interested in retrieving all the relevant opinions
@@ -2739,14 +2739,14 @@ about candidate products; after the user has purchased the product, the user wou
 generally no longer need such information. Another example is that during the
 process of analyzing social media data to understand opinions about an emerging
 event, the analyst may also decide to explore information about a particular entity
-related to the event (e.g., a person), which can also trigger a search activity.
+related to the event (eg, a person), which can also trigger a search activity.
 
 While querying is the most common way of accessing text data in the pull mode,
 browsing is another complementary way of accessing text data in the pull mode, and
 can be very useful when a user does not know how to formulate an effective query,
-or finds it inconvenient to enter a keyword query (e.g., through a smartphone), or
+or finds it inconvenient to enter a keyword query (eg, through a smartphone), or
 simply wants to explore a topic with no fixed goal. Indeed, when searching the Web,
-users tend to mix querying and browsing (e.g., while traversing through hyperlinks).
+users tend to mix querying and browsing (eg, while traversing through hyperlinks).
 
 In general, we may regard querying and browsing as two complementary ways
 of finding relevant information in the information space. Their relation can be
@@ -2771,12 +2771,12 @@ In the push mode, the system initiates the process to recommend a set of
 relevant information items to the user. This mode of information access is generally
 more useful to satisfy a long-standing information need of a user or analyst. For
 example, a researcher’s research interests can be regarded as relatively stable over
-time. In comparison, the information stream (i.e., published research articles)
+time. In comparison, the information stream (ie, published research articles)
 is dynamic. In such a scenario, although a user can regularly search for relevant
 literature information with queries, it is more desirable for a recommender (also
 called filtering) system to monitor the dynamic information stream and “push” any
 relevant articles to the user based on the matching of the articles with the user’s
-interests (e.g., in the form of an email). In some long-term analytics applications,
+interests (eg, in the form of an email). In some long-term analytics applications,
 it would also be desirable to use the push mode to monitor any relevant text data
 (such as relevant social media) about a topic related to the application.
 
@@ -2805,7 +2805,7 @@ needs, it is possible to collect user feedback, which can be exploited. In this 
 
 
 ad hoc retrieval is much harder, as we do not have much feedback information
-from a user (i.e., little training data for a particular query). Due to the availability of
+from a user (ie, little training data for a particular query). Due to the availability of
 training data, the problem of filtering or recommendation can usually be solved by
 using supervised machine learning techniques, which are covered well in many ex
 isting books. Thus, we will cover ad hoc retrieval in much more detail than filtering
@@ -2910,7 +2910,7 @@ of information tends to rely on using text retrieval techniques to match a keywo
 query with companion text data with a non-textual data element. For example, the
 current image search engines on the Web are essentially a TR system where each
 image is represented by a text document consisting of any associated text data with
-the image (e.g., title, caption, or simply textual context of the image such as the
+the image (eg, title, caption, or simply textual context of the image such as the
 news article content where an image is included).
 
 In industry, the problem of TR is generally referred to as the search problem,
@@ -2919,7 +2919,7 @@ engine technology.
 
 The task of TR can be easy or hard, depending on specific queries and specific
 collections. For example, during a web search, finding homepages is generally easy,
-but finding out people’s opinions about some topic (e.g., U.S. foreign policy) would
+but finding out people’s opinions about some topic (eg, U.S. foreign policy) would
 be much harder. There are several reasons why TR is difficult:
 
 . a query is usually quite short and incomplete (no formal language like SQL);
@@ -2997,7 +2997,7 @@ literature to a research problem, the user is unlikely able to clearly and compl
 specify which documents should be returned.
 
 Finally, the expected results in the two applications are also different. In data-
-base search, we can retrieve very specific data elements (e.g., specific columns); in
+base search, we can retrieve very specific data elements (eg, specific columns); in
 TR, we are generally only able to retrieve a set of relevant documents. With passages
 or fields identified in a text document, a search engine can also retrieve passages,
 but it is generally difficult to retrieve specific entities or attribute values as we can in
@@ -3069,15 +3069,15 @@ important open research topic today; we discuss it in detail in Chapter 9.
 
 5.5 Document Selection vs. Document Ranking
 Given a document collection (a set of unordered text documents), the task of text
-retrieval can be defined as using a user query (i.e., a description of the user’s
+retrieval can be defined as using a user query (ie, a description of the user’s
 information need) to identify a subset of documents that can satisfy the user’s
 information need. In order to computationally solve the problem of TR, we must
 first formally define it. Thus, in this section, we will provide a formal definition of
 TR and discuss high-level strategies for solving this problem.
 
-Let V = {w1, . . . , wN} be a vocabulary set of all the words in a particular natural
-language where wi is a word. A user’s query q = q1, q2, . . . , qm is a sequence of words,
-where qi ∈ V . Similarly, a document di = di1, . . . , dim is also a sequence of words
+Let V = {w1,  , wN} be a vocabulary set of all the words in a particular natural
+language where wi is a word. A user’s query q = q1, q2,  , qm is a sequence of words,
+where qi ∈ V . Similarly, a document di = di1,  , dim is also a sequence of words
 where dij ∈ V . In general, a query is much shorter than a document since the query
 
 
@@ -3088,14 +3088,14 @@ is often typed in by a user using a search engine system, and users generally do
 want to make much effort to type in many words. However, this is not always the
 case. For example, in a Twitter search, each document is a tweet which is very short,
 and a user may also cut and paste a text segment from an existing document as a
-query, which can be very long. Our text collection C = {d1, . . . , dM} is a set of text
+query, which can be very long. Our text collection C = {d1,  , dM} is a set of text
 documents. In general, we may assume that there exists a subset of documents in
-the collection, i.e., R(q) ⊂ C, which are relevant to the user’s query q; that is, they
+the collection, ie, R(q) ⊂ C, which are relevant to the user’s query q; that is, they
 are relevant documents or documents useful to the user who typed in the query.
 Naturally, this relevant set depends on the query q. However, which documents are
 relevant is generally unknown; the user’s query is only a “hint” at which documents
 should be in the set R(q). Furthermore, different users may use the same query
-to intend to retrieve somewhat different sets of relevant documents (e.g., in an
+to intend to retrieve somewhat different sets of relevant documents (eg, in an
 extreme case, a query word may be ambiguous). This means that it is unrealistic
 to expect a computer to return exactly the set R(q), unlike the case in database
 search where this is feasible. Thus, the best a computer can do is to return an
@@ -3108,7 +3108,7 @@ non-relevant with respect to a particular query. That is, we will design a binar
 sification function, or an indicator function, f (q , d) ∈ {0, 1}. If f (q , d) = 1, d would
 be assumed to be relevant, whereas if f (q , d) = 0, it would be non-relevant. Thus,
 R′(q) = {d|f (q , d) = 1, d ∈ C}. Using such a strategy, the system must estimate the
-absolute relevance, i.e., whether a document is relevant or not.
+absolute relevance, ie, whether a document is relevant or not.
 
 An alternative strategy is to rank documents and let the user decide a cutoff. That
 is, we will implement a ranking function f (q , d) ∈ R and rank all the documents in
@@ -3188,7 +3188,7 @@ to 1997, can be found in Readings in Information Retrieval [Sparck Jones and Wil
 In this chapter, we introduce the two main information retrieval models: vector
 space and query likelihood, which are among the most effective and practically
 useful retrieval models. We begin with a brief overview of retrieval models in general
-and then discuss the two basic models, i.e., the vector space model and the query
+and then discuss the two basic models, ie, the vector space model and the query
 likelihood model afterward.
 
 6.1 Overview
@@ -3238,11 +3238,11 @@ all the desired constraints. Interestingly, although all these models are based 
 different thinking, in the end the retrieval functions tend to be very similar and
 involve similar variables. The axiomatic retrieval framework has proven effective
 for diagnosing deficiencies of a retrieval model and developing improved retrieval
-models accordingly (e.g., BM25+ [Lv and Zhai 2011]).
+models accordingly (eg, BM25+ [Lv and Zhai 2011]).
 
 Although many models have been proposed, very few have survived extensive ex
 perimentation to prove effective and robustness. In this book, we have chosen to
-cover four specific models (i.e., BM25, pivoted length normalization, query likeli
+cover four specific models (ie, BM25, pivoted length normalization, query likeli
 hood with JM smoothing, and query likelihood with Dirichlet prior smoothing) that
 are among the very few most effective and robust models.1
 
@@ -3341,7 +3341,7 @@ the query will all be placed in this vector space. For example, the vector d1 re
 sents a document that probably covers the terms library and presidential without
 really talking about programming. What does this mean in terms of representation
 of the document? It means that we will rely solely on this vector to represent the
-original document, and thus ignore everything else, including, e.g., the order of
+original document, and thus ignore everything else, including, eg, the order of
 the words (which may sometimes be important to keep!). It is thus not an optimal
 representation, but it is often sufficient for many retrieval problems.
 
@@ -3811,7 +3811,7 @@ assume that for the average length documents, the score is about right (a normal
 would be one). If a document is longer than the average document length, then
 there will be some penalization. If it’s shorter than the average document length,
 there’s even some reward. The x-axis represents the length of a document. On the
-y-axis we show the normalizer, i.e., the pivoted length normalization. The formula
+y-axis we show the normalizer, ie, the pivoted length normalization. The formula
 for the normalizer is an interpolation of one and the normalized document lengths,
 controlled by a parameter b. When we first divide the length of the document by
 the average document length, this not only gives us some sense about how this
@@ -3897,7 +3897,7 @@ with structure. For example, you might consider the title field, the abstract fi
 the body of the research article, or even anchor text (on web pages). These can all be
 combined with an appropriate weight on different fields to help improve scoring for
 each document. Essentially, this formulation applies BM25 on each field, and then
-combines the scores, but keeps global (i.e., across all fields) frequency counts. This
+combines the scores, but keeps global (ie, across all fields) frequency counts. This
 has the advantage of avoiding over-counting the first occurrence of the term. Recall
 that in the sublinear transformation of TF, the first occurrence is very important
 
@@ -4088,7 +4088,7 @@ is generated independently, the probability of the query is just a product of th
 probability of each query word, where the probability of each word is just the relative
 frequency of the word in the document. For example, the probability of presidential
 given the document would be just the count of presidential in the document divided
-by the total number of words in the document (i.e., the document length). We now
+by the total number of words in the document (ie, the document length). We now
 have an actual formula for retrieval that we can use to rank documents.
 
 Let’s take a look at some example documents from Figure 6.21. Suppose now
@@ -4151,13 +4151,13 @@ them based on the probabilities we calculate.
 Let’s formally state our scoring process for query likelihood. A query q contains
 the words
 
-q = w1, w2, . . . , wn
+q = w1, w2,  , wn
 
 such that |q| = n. The scoring or ranking function is then the probability that we
 observe q given that a user is thinking of a particular document d. This is the product of probabilities of all individual words, which is based on the independence
 assumption mentioned before:
 
-p(q | d) = p(w1 | d) × p(w2 | d) × . . . × p(wn | d). (6.4)
+p(q | d) = p(w1 | d) × p(w2 | d) ×  × p(wn | d). (6.4)
 
 
 
@@ -4197,7 +4197,7 @@ query likelihood.
 6.4.2 Smoothing the Document Language Model
 When calculating the query likelihood retrieval score, recall that we take a sum of
 log probabilities over all of the query words, using the probability of a word in the
-query given the document (i.e., the document language model). The main task now
+query given the document (ie, the document language model). The main task now
 is to estimate this document language model. In this section we look into this task
 in more detail.
 
@@ -4750,7 +4750,7 @@ This section also concludes our discussion of the query likelihood probabilistic
 retrieval models. Let’s recall what assumptions we have made in order to derive the
 functions that we have seen the following.
 
-1. The relevance can be modeled by the query likelihood, i.e., p(R | d , q) ≈
+1. The relevance can be modeled by the query likelihood, ie, p(R | d , q) ≈
 p(q | d).
 
 2. Query words are generated independently, allowing us to decompose the
@@ -4949,7 +4949,7 @@ dj∈Dn
 
 dj , (7.1)
 
-where q is the original query vector that is transformed into qm, the modified (i.e.,
+where q is the original query vector that is transformed into qm, the modified (ie,
 expanded) vector. Dr is the set of relevant feedback documents and Dn is the set of
 non-relevant feedback documents. Additionally, we have the parameters α , β , and
 γ which are weights that control the amount of movement of the original vector.
@@ -5096,7 +5096,7 @@ frequency into a probabilistic distribution. This distribution is the only diffe
 which is able to characterize the user’s query in a more general way. This query lan
 guage model can be estimated in many different ways—including using feedback
 information. This method is called KL-divergence because this can be interpreted
-as measuring the divergence (i.e., difference) between two distributions; one is the
+as measuring the divergence (ie, difference) between two distributions; one is the
 query model p(w | θ̂Q) and the other is the document language model from before.
 We won’t go into detail on KL-divergence, but there is a more detailed explanation
 in appendix C.
@@ -5329,7 +5329,7 @@ that we mention later on in the book.
 Bibliographic Notes and Further Reading
 An early empirical comparison of various relevance feedback techniques can be
 found in Salton and Buckley [1990]. Pseudo-relevance feedback has become popu
-lar after positive results being observed in TREC experiments (e.g., Buckley 1994,
+lar after positive results being observed in TREC experiments (eg, Buckley 1994,
 Xu and Croft 1996). A comparison of feedback approaches in language models is
 available in Lv and Zhai [2009]. The positional relevance model proposed in Lv and
 Zhai [2010] appears to be one of the most effective methods for estimating a query
@@ -5341,7 +5341,7 @@ though the interpretation of user clickthroughs must take position bias into con
 sideration, which is discussed in detail in Joachims et al. [2007]. A bibliography on
 implicit feedback can be found in Kelly and Teevan [2003]. In the web search era,
 implicit feedback is often implemented in the form of using feedback features in
-a ranking function using machine learning, i.e., learning to rank techniques; they
+a ranking function using machine learning, ie, learning to rank techniques; they
 are discussed briefly in Chapter 10 of the book. For a more thorough discussion of
 mining query logs, see the tutorial [Silvestri 2010].
 
@@ -5537,7 +5537,7 @@ of document IDs and frequency information of the term in those documents).
 In order to support “proximity heuristics” (rewarding matching terms that are
 together), it is also common to store the position of each term occurrence. Such
 position information can be used to check whether all the query terms are matched
-within a certain window of text, e.g., it can be used to check whether a phrase
+within a certain window of text, eg, it can be used to check whether a phrase
 is matched. This information is stored in the postings file since it is document-
 specific.
 
@@ -5640,7 +5640,7 @@ relevant to the forward index as well, such as compression and caching.
 Now that we have our inverted index, how can we use it to efficiently score queries?
 Imagine for a moment that we don’t have an inverted index; we only have the
 forward index, which maps document IDs to a list of terms that occur in them. To
-score a query vector, we’d need to iterate through every single entry (i.e., document)
+score a query vector, we’d need to iterate through every single entry (ie, document)
 in the forward index and run a scoring function on the each (document, query) pair.
 
 
@@ -5838,7 +5838,7 @@ explode in size, not to mention that adding more documents to the index would
 invalidate the stored query vectors (since the new documents might also match the
 original query).
 
-In practice, we can have some compromise between these two extremes, e.g.,
+In practice, we can have some compromise between these two extremes, eg,
 only storing the very frequently expanded queries, or using query similarity to
 search for a similar query that has been saved. The caching techniques discussed
 in a later section are also applicable to feedback methods, so consider how to adopt
@@ -5873,7 +5873,7 @@ bution of their gaps would be skewed since when a term is frequent, its inverted
 would have many document IDs leading to many small gaps. Consider the following
 example of a list of document IDs:
 
-{23, 25, 34, 35, 39, 43, 49, 51, 57, 59, . . .}.
+{23, 25, 34, 35, 39, 43, 49, 51, 57, 59, }.
 
 Instead of storing these exact numbers, we can store the offsets between them;
 this creates more smaller numbers, which are easier to compress since they take
@@ -5884,7 +5884,7 @@ this creates more smaller numbers, which are easier to compress since they take
 
 up less space and are more frequent:
 
-{23, 2, 9, 1, 4, 4, 6, 2, 6, 2, . . .}.
+{23, 2, 9, 1, 4, 4, 6, 2, 6, 2, }.
 
 To get the actual document ID values, simply add the offset to the previous value.
 So the first ID is 23 and the second is 23 + 2 = 25. The third is 25 + 9 = 34, and
@@ -5989,7 +5989,7 @@ quired to encode and decode. Every single bit needs to be read in order to read
 one integer. Block compression attempts to alleviate this issue by reading bytes at
 a time instead of bits. In block compression schemes, only one bitwise operation
 per byte is usually required as opposed to at least one operation per bit in the pre
-vious three schemes (e.g., count how many bit operations are required to δ-encode
+vious three schemes (eg, count how many bit operations are required to δ-encode
 the integer 47).
 
 Block compression seeks to reduce the number of CPU instructions required
@@ -6049,7 +6049,7 @@ This might look like
 
 45, 5, 0000000010001100111010010100111100111011,
 
-where 45 and 5 could be stored however is convenient (e.g., fixed binary length).
+where 45 and 5 could be stored however is convenient (eg, fixed binary length).
 This method also reduces the number of bitwise operations, since we read chunks
 of 5 bits and add them to the base value 45 to recreate the sequence. Another
 nice side effect is that we know the minimum value and maximum possible value
@@ -6229,7 +6229,7 @@ that was invented many years ago by using the same approach.
 
 In Figure 9.1, we illustrate how the Cranfield evaluation methodology works. As
 mentioned, we need a set of queries that are shown here. We have Q1, Q2, and so
-on. We also need the document collection, D1, D2, . . ., and on the far right side of
+on. We also need the document collection, D1, D2, , and on the far right side of
 the figure, we have the relevance judgments which are plus or minus annotations
 on each document specifying whether it is relevant (plus) or not relevant (minus).
 Essentially, these are binary judgments of documents with respect to a specific
@@ -6370,7 +6370,7 @@ captured in the F1 score.
 
 In order to understand the formulation, we can first ask the natural question:
 Why not combine them using a simple arithmetic mean? That would be likely the
-most natural way of combining them. Why is this not as good as F1, i.e., what’s
+most natural way of combining them. Why is this not as good as F1, ie, what’s
 the problem with an arithmetic mean?
 
 The arithmetic mean tends to be dominated by large values. That means if you
@@ -6384,7 +6384,7 @@ reward a case where precision and recall are roughly similar. So, it would penal
 a case with an extremely high result for only one of them. This means F1 encodes
 a different tradeoff between them than a simple arithmetic mean. This example
 shows a very important methodology: when we try to solve a problem, you might
-naturally think of one solution (e.g., the arithmetic mean), but it’s important not
+naturally think of one solution (eg, the arithmetic mean), but it’s important not
 to settle on this solution; rather, think whether there are other ways to approach it.
 Once you have multiple ideas, it’s important to analyze their differences and then
 think about which one makes more sense in a real scenario.
@@ -6486,7 +6486,7 @@ means it depends on whether the user cares about high recall, or low recall with
 high precision. Imagine someone is just going to check out what’s happening today
 and wants to find out something relevant in the news. Which system is better for
 that task? In this case, system B is better because the user is unlikely to examine
-many results, i.e., the user doesn’t care about high recall, only the first few results
+many results, ie, the user doesn’t care about high recall, only the first few results
 being useful. On the other hand, if a user wants to determine whether an idea has
 been thought of before, they will want to emphasize high recall so that they see as
 many relevant documents as possible and don’t miss the chance to find the idea.
@@ -6567,7 +6567,7 @@ ment of each systems’ capability. Using more queries then requires the researc
 to take an average of the average precision over all these queries. Naturally, we can
 simply calculate an arithmetic mean. In fact, this would give us what’s called mean
 average precision (MAP). In this case, we take arithmetic mean of all the average
-precisions over several queries or topics. Let L= L1, L2, . . . , Lm be the ranked lists
+precisions over several queries or topics. Let L= L1, L2,  , Lm be the ranked lists
 returned from running m different queries. Then we have
 
 MAP(L) = 1
@@ -6992,7 +6992,7 @@ questions were not serious.
 
 The second problem is that there is much low quality information known as
 spam. Search engine optimization is the attempt to heighten a particular page’s rank
-by taking advantage of how pages are scored, e.g., adding many words that are not
+by taking advantage of how pages are scored, eg, adding many words that are not
 necessarily relevant to the actual content or creating many fake links to a particular
 page to make it seem more popular than it really is. Many different approaches
 have been designed to detect and prevent such spamming practices [Spirin and
@@ -7075,7 +7075,7 @@ So, what are the major crawling strategies? In general, breadth-first search is 
 most common because it naturally balances server load. Parallel crawling is also
 very natural because this task is very easy to parallelize. One interesting variation is
 called focused crawling. Here, we’re going to crawl some pages about a particular
-topic, e.g., all pages about automobiles. This is typically going to start with a query
+topic, eg, all pages about automobiles. This is typically going to start with a query
 that you use to get some results. Then, you gradually crawl more. An even more
 extreme version of focused crawling is (for example) downloading and indexing all
 forum posts on a particular forum. In this case, we might have a URL such as
@@ -7201,7 +7201,7 @@ by a different instance of the map function, which will produce a similar output
 As mentioned, the collector will do the internal grouping or sorting. At this stage,
 you can see we have collected multiple pairs. Each pair is a word and its count in the
 line. Once we see all these pairs, then we can sort them based on the key, which is
-the word. Each word now is attached to a number of values, i.e., a number of counts.
+the word. Each word now is attached to a number of values, ie, a number of counts.
 These counts represent the occurrences of this word in different lines. These new
 (key , value) pairs will then be fed into a reduce function.
 
@@ -7669,7 +7669,7 @@ users, so we already know the relevance judgments. We know which documents
 should be highly ranked for which queries, and this information can be based
 on real judgments by users or can be approximated by just using clickthrough
 information as we discussed in Chapter 7. We will try to optimize our search
-engine’s retrieval accuracy (using, e.g., MAP or NDCG) on the training data by
+engine’s retrieval accuracy (using, eg, MAP or NDCG) on the training data by
 adjusting these parameters. The training data would look like a table of tuples.
 Each tuple has three elements: the query, the document, and the judgment. Let’s
 take a look at a specific method that’s based on logistic regression:
@@ -8034,7 +8034,7 @@ active user u for object x based on a weighted average of the ratings of x given
 similar users to u. Thus, we can think of this approach involving two steps: In the
 first step, we simply “retrieve” similar users to the current user u where similarity
 is often defined as the similarity between the two vectors for two users. Each user
-can be represented by a rating vector (i.e., all the ratings given by this user). The
+can be represented by a rating vector (ie, all the ratings given by this user). The
 similarity of two vectors can be measured based on the cosine similarity or Pearson
 correlation of the two vectors, which tends to perform very well empirically. In the
 second step, we compute a weighted average of the ratings of x given by all these
@@ -8220,7 +8220,7 @@ still a safe point), but not necessarily reach all the way to it. Rather, we’r
 use other parameters to further define α’s value given some additional information.
 
 The β parameter controls the deviation from θopt , which can be based on our
-previously observed documents (i.e., the training data). What’s more interesting is
+previously observed documents (ie, the training data). What’s more interesting is
 the γ parameter which controls the influence of the number of examples in the
 training data set, N . As N becomes greater, it encourages less exploration. In other
 words, when N is very small, the algorithm will try to explore more, meaning that
@@ -8267,9 +8267,9 @@ filtering.
 
 Here, we will infer an individual’s interest based on other similar users. The
 general idea is displayed in Figure 11.6: given a user u, we will rank other users
-based on similarity, u1, . . . , um. We then predict user preferences based on the
+based on similarity, u1,  , um. We then predict user preferences based on the
 preferences of these m other users. The preference is on a common set of items
-o1, . . . , on. If we arrange the users and objects into a matrix X, we can consider the
+o1,  , on. If we arrange the users and objects into a matrix X, we can consider the
 user ui and the object oj as the point (ui , oj) in the matrix. If we have a judgment
 by that user for that object, the element in that position would be the user rating
 Xij .
@@ -8277,7 +8277,7 @@ Xij .
 Again, note that the exact content of each item doesn’t matter at all. We only
 consider the relationship between the users and the items. This makes this ap
 proach very general since it can be applied to any items—not just text documents.
-Those items could be movies or products and the users could give ratings (e.g.) one
+Those items could be movies or products and the users could give ratings (eg) one
 through five. Some users have watched movies and rated them, but most movies
 for a given user are unrated (since it’s unlikely that a user has examined all items in
 the object space). Thus, many item entries have unknown values and it is the job of
@@ -8304,7 +8304,7 @@ solving this problem. In fact, there is a major conference specifically dedicate
 this problem.
 
 We will discuss what is called a memory-based approach. When we consider a
-particular user, we’re going to try to retrieve the relevant (i.e., similar) users to the
+particular user, we’re going to try to retrieve the relevant (ie, similar) users to the
 current user. Then, we use those users to predict the preference of the current
 user. Let ni be the average rating of all objects by user ui. We need ni so we can
 normalize the ratings of objects by this user by subtracting the average rating from
@@ -8459,7 +8459,7 @@ score, and other similar measures.
 In a true information filtering system, there will be many users who receive all
 
 pushed items. A simple way to aggregate scores would be to take an average of the
-individual user metrics, e.g., average F1 score across all users. However, this may not
+individual user metrics, eg, average F1 score across all users. However, this may not
 be the best measure if some users have more recommendations than others. Since
 θ is set on a per-user basis, different users will aggregate different numbers of seen
 documents. Furthermore, in a real system users may not all join at the same time,
@@ -8544,8 +8544,8 @@ may also choose to further search inside a particular cluster to further zoom in
 specific subset of documents, and additional analysis operators such as sentiment
 analysis may then be applied to this newly obtained smaller subset. Moreover,
 techniques from both Part II and Part III can often be combined to provide more
-useful functions to users (e.g., summarization can be naturally combined with a
-search engine or recommender system), and they may enhance each other (e.g., the
+useful functions to users (eg, summarization can be naturally combined with a
+search engine or recommender system), and they may enhance each other (eg, the
 term weighitng methods discussed in Part II are also very useful for many tasks such
 as clustering, categorization, and summarization in Part III, and clustering in Part
 III can be useful for improving retrieval algorthm covered in Part II). Nevertheless,
@@ -8741,20 +8741,20 @@ the figure, we illustrate that text mining can also allow us to infer values of
 interesting real world variables by leveraging the correlation of the values of
 such variables and the content in text data. For example, there may be some
 correlation between the stock price changes on the stock market and the
-events reported in the news data (e.g., a positive earnings report of a company
+events reported in the news data (eg, a positive earnings report of a company
 may be correlated with the increase of the stock price of the company). Such
 correlations can be leveraged to perform text-based forecasting, where we use
 text data as a basis for prediction of other variables that may only be remotely
-related to text data (e.g., prediction of stock prices). Inference about unknown
+related to text data (eg, prediction of stock prices). Inference about unknown
 factors that affect decision making can have many applications, especially
-if we can make predictions about future events (i.e., text-based predictive
+if we can make predictions about future events (ie, text-based predictive
 analytics).
 
 Note that when we infer other real-world variables, it is often possible and
 beneficial to leverage the results of all kinds of text mining algorithms to
 generate more effective features for use in a predictive model than the basic
 features we can generate directly from the original text data. For example, if
-we can mine text data to discover topics, we would be able to use topics (i.e., a
+we can mine text data to discover topics, we would be able to use topics (ie, a
 set of semantically related words), rather than individual words, as features.
 Since topics can address the issue of word sense ambiguity and variations
 of word usages when discussing a topic, such high-level semantic features
@@ -8762,7 +8762,7 @@ can be expected to be more effective than word-level features for prediction.
 Another example is to predict what products may be liked by a user based on
 
 
-what the user has said in text data (e.g., reviews), in which case, the results
+what the user has said in text data (eg, reviews), in which case, the results
 from mining knowledge about the observer would clearly be very useful for
 prediction.
 
@@ -8776,8 +8776,8 @@ combined with non-text features).
 
 Non-text data can also be used for analyzing text by supplying context,
 thus opening up many interesting opportunities to mine context-sensitive
-knowledge from text data, i.e., associating the knowledge discovered from text
-data with the non-text data (e.g., associating topics discovered from text with
+knowledge from text data, ie, associating the knowledge discovered from text
+data with the non-text data (eg, associating topics discovered from text with
 time would generate temporal trends of topics). When we look at the text data
 alone, we’ll be mostly looking at the content or opinions expressed in the text.
 However, text data generally also has context associated with it. For example,
@@ -9123,7 +9123,7 @@ To summarize, the main idea of computing paradigmatic relations is to collect
 the context of a candidate word to form a pseudo document which is typically
 represented as a bag of words. We then compute the similarity of the corresponding
 context documents of two candidate words; highly similar word pairs have the
-highest paradigmatic relations, i.e., the words that share similar contexts. There are
+highest paradigmatic relations, ie, the words that share similar contexts. There are
 many different ways to implement this general idea, but we just talked about a few
 of the approaches. Specifically, we talked about using text retrieval models to help
 us design an effective similarity function to compute the paradigmatic relations.
@@ -9537,14 +9537,14 @@ terms.
 14Text Clustering
 
 Clustering is a natural problem in exploratory text analysis. In its most basic sense,
-clustering (i.e., grouping) objects together lets us discover some inherent structure
+clustering (ie, grouping) objects together lets us discover some inherent structure
 in our corpus by collecting similar objects. These objects could be documents,
 sentences, or words. We could cluster search engine queries, search engine results,
 and even users themselves.
 
 Clustering is a general data mining technique very useful for exploring large data
 sets. When facing a large collection of text data, clustering can reveal natural se
-mantic structures in the data in the form of multiple clusters (i.e., groups) of data
+mantic structures in the data in the form of multiple clusters (ie, groups) of data
 objects. The clustering results can sometimes be regarded as knowledge directly
 useful in an application. For example, clustering customer emails can reveal major
 customer complaints about a product. In general, the clustering results are useful
@@ -9585,7 +9585,7 @@ result.
 Consider the illustration in Figure 14.1. How should we cluster the objects
 shown in the figure on the left side? What would an ideal clustering result look
 like? Clearly these questions cannot be answered until we define the perspective
-for measuring similarity very clearly, i.e., inject a particular “clustering bias.” If
+for measuring similarity very clearly, ie, inject a particular “clustering bias.” If
 we define similarity based on the shape of an object, we will obtain a clustering
 result as shown in the picture in the middle of the figure. However, if we define
 the similarity based on the size of an object, then we would have very different
@@ -9608,7 +9608,7 @@ the same cluster. Other clustering algorithms are model-based (typically based o
 
 
 generative probabilistic models), where the objective function of the model for the
-data (e.g., the likelihood function in the case of a generative probabilistic model)
+data (eg, the likelihood function in the case of a generative probabilistic model)
 is to create an indirect bias on how similarity is defined. With these model-based
 methods, it’s often the case that an object is assigned a probability distribution
 over all the clusters, meaning there is no “hard cluster assignment” as in the
@@ -9644,7 +9644,7 @@ is a “hard assignment,” unlike the clusters we receive from a model-based
 method.
 
 Model-based techniques design a probabilistic model to capture the latent struc
-ture of data (i.e., features in documents), and fit the model to data to obtain
+ture of data (ie, features in documents), and fit the model to data to obtain
 clusters. Typically, this is an example of soft clustering, since one object can
 be in multiple clusters (with a certain probability). There will be much more
 discussion on this in the topic analysis chapter.
@@ -9699,7 +9699,7 @@ tokenized documents according to some feature representation. Leveraging the
 data structures already in place for supporting search is especially desirable in a
 unified software system for supporting both text data access and text analysis. The
 clustering techniques we discuss are general, so they can be potentially used for
-clustering many different types of objects, including, e.g., unigram words, bigram
+clustering many different types of objects, including, eg, unigram words, bigram
 words, trigram POS-tags, or syntactic tree features. All the clustering algorithms
 need are a term vocabulary represented as term IDs. The clustering algorithms only
 care about term occurrences and probabilities, not what they actually represent.
@@ -9788,7 +9788,7 @@ elements in each cluster in order to perform the merge.
 
 Complete-link merges the two clusters with the smallest maximum distance be
 tween elements. This results in very “tight” and “compact” clusters since the
-cluster diameter is kept small (i.e., the distance between all elements low).
+cluster diameter is kept small (ie, the distance between all elements low).
 
 
 
@@ -9992,7 +9992,7 @@ With such a formula, an unseen word would not have a zero probability, and the
 estimated probability is, in general, more accurate. We can replace p(w | C) in the
 previous scoring function with our smoothed version. In the example, this brings
 the score for artichoke much lower since we “pretend” to have seen a count of it in
-the background. Words that actually are semantically related (i.e., that occur much
+the background. Words that actually are semantically related (ie, that occur much
 more frequently in the context of computer) would not be affected by this smoothing
 and instead would “rise up” as the unrelated words are shifted downwards in the
 list of sorted scores.
@@ -10014,7 +10014,7 @@ and quantifies the probability of their co-occurrence within some context of a
 window of words. For example, to find words that co-occur with wi using a window
 of size n, we look at the words
 
-wi−n, . . . , wi−1, wi , wi+1, . . . , wi+n.
+wi−n,  , wi−1, wi , wi+1,  , wi+n.
 
 This allows us to calculate the probability of wi and wj co-occurring, which is rep
 resented as the joint probability p(wi , wj). Along with the individual probabilities
@@ -10033,8 +10033,8 @@ p(wi)p(wj)
 Note that if wi and wj are independent, then p(wi)p(wj) = p(wi , wj). This forces
 us to take a logarithm of 1, which yields a PMI of zero; there is no measure of
 information transferred by two independent words. If, however, the probability of
-observing the two words occurring together, i.e., p(wi , wj) is substantially larger
-than their expected probability of co-occurrence if there were independent, i.e.,
+observing the two words occurring together, ie, p(wi , wj) is substantially larger
+than their expected probability of co-occurrence if there were independent, ie,
 p(wi)p(wj), then the PMI would be high as we would expect.
 
 
@@ -10096,28 +10096,28 @@ the decrease of mutual information between adjacent classes.
 
 Mathematically, assuming that we partition all the words in the vocabulary into
 C classes, the n-gram class language model defines the probability of observing a
-word wn given that we have already n − 1 words preceeding wn, i.e., wn−1, . . . , w1
+word wn given that we have already n − 1 words preceeding wn, ie, wn−1,  , w1
 
 as
 
-p(wn | wn−1, . . . , w1) = p(wn | cn)p(cn | cn−1, . . . , c1),
+p(wn | wn−1,  , w1) = p(wn | cn)p(cn | cn−1,  , c1),
 
 where ci is the class of word wi. It essentially assumes that the probability of
 observing wn only depends on the classes of the previous words, but does not
-depend on the specific words, thus unless C is the same as vocabulary size (i.e.,
+depend on the specific words, thus unless C is the same as vocabulary size (ie,
 every word is in its own class), the n-gram class language model always has fewer
 parameters than the regular n-gram language model.
 
 As a generative model, we would generate a word by first looking up the classes
-of the previous words, i.e., cn−1, . . . , c1, then sample a class for the n-th position cn
+of the previous words, ie, cn−1,  , c1, then sample a class for the n-th position cn
 
-using p(cn | cn−1, . . . , c1), and finally sample a word at the n-th position by using
+using p(cn | cn−1,  , c1), and finally sample a word at the n-th position by using
 p(w | cn). The distribution p(w | cn) captures how frequently we will observe word
 w when the latent class cn is used.
 
 If we are given the partitioning of words into C classses, then the maximum
 likelihood estimation is not hard as we can simply replace the words with their
-corresponding classes to estimate p(cn | cn−1, . . . , c1) in the same way as we would
+corresponding classes to estimate p(cn | cn−1,  , c1) in the same way as we would
 for estimating a regular n-gram language model, and the probability of a word given
 a particular class p(w | c) can also be easily estimated by pooling together all the
 observations of words in the data belonging to the class c and normalizing their
@@ -10126,14 +10126,14 @@ w in the whole data set.
 
 However, finding the best partitioning of words is computationally intractable.
 Fortunately, we can use a greedy algorithm to construct word classes in very much
-the same way as agglomerative hierarchical clustering, i.e., gradually merging
+the same way as agglomerative hierarchical clustering, ie, gradually merging
 words to form classes by keeping track of the objective of maximizing the like
 lihood. A neat theoretical result is that the maximization of the likelihood is equiv
 alent to maximization of the mutual information between all the adjacent classes
 in the case of bigram model. Thus, the best pairs of words to merge would tend to
 
 
-be those that are distributed in very similar contexts (e.g., Tuesday and Wednesday)
+be those that are distributed in very similar contexts (eg, Tuesday and Wednesday)
 since by putting such words in the same class, the prediction power of the class
 would be about the same as that of the original word, allowing to minimize the loss
 of mutual information. Computation-wise, we simply do agglomerative hierarchi
@@ -10151,11 +10151,11 @@ paradigmatic relations well.
 The model can also be used to generate syntagmatic associations by essentially
 computing the pointwise mutual information between words that occur in different
 
-positions. When the window of co-occurrences is restricted to two words (i.e.,
+positions. When the window of co-occurrences is restricted to two words (ie,
 adjacent co-occurrences), the model can discover “sticky phrases” (see Figure 14.7
 for sample results), which are non-compositional phrases whose meaning is not a
 direct composition of the meanings of individual words. Such non-compositional
-phrases can also be discovered using some other statistical methods (see, e.g., Zhai
+phrases can also be discovered using some other statistical methods (see, eg, Zhai
 1997, Lin 1999).
 
 14.3.3.2 Neural language model (word embedding)
@@ -10195,7 +10195,7 @@ such a language model would be the vector representations of words. As a result,
 fitting the model to a specific data set, we can learn the vector representations for
 all the words. These language models are called neural language models because
 they can be represented as a neural network. For example, to model an n-gram lan
-guage model p(wn | wn−1, . . . , w1), the neural network would have wn−1, . . . , w1 as
+guage model p(wn | wn−1,  , w1), the neural network would have wn−1,  , w1 as
 input and wn as the output. In some neural language models, the hidden layer in
 the neural network connected to a word can be interpreted as a vector represen
 tation of the word with the elements being the weights on the edges connected to
@@ -10227,7 +10227,7 @@ vector addition on terms in vector space yielded interesting results. For exampl
 adding the vectors for Germany and capital resulted in a vector very close to the
 vector Berlin. Figure 14.8 shows example output from using this tool. Although sim
 ilar results can also be obtained by using heuristic paradigmatic relation discovery
-(e.g., using the methods we described in Chapter 13) and the n-gram class language
+(eg, using the methods we described in Chapter 13) and the n-gram class language
 model, word embedding provides a very promising new alternative that can poten
 tially open up many interesting new applications of text mining due to its flexibility
 in formulating the objective functions to be optimized and the fact that the vector
@@ -10245,7 +10245,7 @@ approach, followed by pointwise mutual information. We then briefly introduced
 two model-based approaches, one based on n-gram language models and one based
 on neural language models for word embedding. These term clustering methods
 can be leveraged to improve the computation of similarity between documents or
-other text objects by allowing inexact matching of terms (e.g., allowing words in
+other text objects by allowing inexact matching of terms (eg, allowing words in
 the same cluster or with high similarity to “match” with each other).
 
 14.4 Evaluation of Text Clustering
@@ -10339,7 +10339,7 @@ are reviewed. An empirical comparison of some document clustering techniques
 can be found in Steinbach et al. [2000]. Term clustering is related to word associ
 ation discovery, a topic covered in Chapter 13. An interesting theoretical work on
 clustering is Kleinberg [2002], where it is shown that there does not exist any clus
-tering that can satisfy a small number of desirable properties (i.e., an impossibility
+tering that can satisfy a small number of desirable properties (ie, an impossibility
 theorem about clustering).
 
 15Text Categorization
@@ -10359,14 +10359,14 @@ can use text categorization techniques, which have widespread applications.
 
 In general, the text categorization problem is as follows. Given a set of predefined
 categories, possibly forming a hierarchy, and often also a training set of labeled
-text objects (i.e., text objects with known labels of categories), the task of text
+text objects (ie, text objects with known labels of categories), the task of text
 categorization is to label (unseen) text objects with one or more categories. This
 is illustrated in Figure 15.1.
 
 At the very high level, text categorization is usually to help achieve two goals of
 applications.
 
-1. To enrich text representation (i.e., achieving more understanding of text):
+1. To enrich text representation (ie, achieving more understanding of text):
 with text categorization, we would be able to represent text in multiple levels
 (keywords + categories). In such an application, we also call text categorization
 text annotation. For example, semantic categories assigned to text can be
@@ -10378,7 +10378,7 @@ more meaningful overall assessment of opinions.
 
 
 
-2. To infer properties of entities associated with text data (i.e., discovery of
+2. To infer properties of entities associated with text data (ie, discovery of
 knowledge about the world): as long as an entity can be associated with text
 data in some way, it is always potentially possible to use the text data to help
 categorize the associated entities. For example, we can use the English text
@@ -10392,20 +10392,20 @@ prediction.
 These two somewhat different goals can also be distinguished based on the
 difference in the categories in each case. For the purpose of enriching text rep
 resentation, the categories tend to be “internal” categories that characterize a text
-object (e.g., topical categories, sentiment categories). For the purpose of inferring
+object (eg, topical categories, sentiment categories). For the purpose of inferring
 properties of associated entities with text data, the categories tend to be “external”
-categories that characterize an entity associated with the text object (e.g., author at
+categories that characterize an entity associated with the text object (eg, author at
 tribution or any other meaningful categories associated with text data, potentially
 through indirect links). Computationally, however, these variations are all similar
 in that the input is a text object and the output is one or multiple categories. We
 thus do not further distinguish these different variations.
 
 The landscape of applications of text categorization is further enriched due to
-the variation we have in the text objects to be classified, which can include, e.g.,
+the variation we have in the text objects to be classified, which can include, eg,
 documents, sentences, passages, or collections of text.
 
 15.2 Overview of Text Categorization Methods
-When there is no training data available (i.e., text data with known categories explic
+When there is no training data available (ie, text data with known categories explic
 itly labelled), we often have to manually create heuristic rules to solve the problem
 
 of categorization. For example, the rule if the word “governor” occurs → assign pol
@@ -10414,7 +10414,7 @@ knowledge about the specific problem of categorization.
 
 Such a rule-based manual approach would work well if: (1) the categories are
 very clearly defined (usually means that the categories are relatively simple); (2) the
-categories are easily distinguished based on surface features in text (e.g., particular
+categories are easily distinguished based on surface features in text (eg, particular
 words only occur in a particular category of documents); and (3) sufficient domain
 knowledge is available to suggest many effective rules.
 
@@ -10429,7 +10429,7 @@ rules.
 
 These problems with the rule-based manual approach can mostly be addressed
 by using machine learning where humans would help the machine by labeling
-some examples with the correct categories (i.e., creating training examples), and
+some examples with the correct categories (ie, creating training examples), and
 the machine will learn from these examples to somewhat automatically construct
 rules for categorization, only that the rules are somewhat “soft” and weighted, and
 how the rules should be combined is also learned based on the training data. Note
@@ -10442,19 +10442,19 @@ classification errors on the training data with the weights automatically learne
 The machine may also automatically construct soft rules based on primitive fea
 tures provided by humans as in the case of decision trees [Quinlan 1986], which
 can be easily interpreted as a “rule-based” classifier, but the paths from the root
-to the leaves (i.e., the rules) are inducted automatically by using machine learning.
+to the leaves (ie, the rules) are inducted automatically by using machine learning.
 Once a classifier (categorizer) is trained, it can be used to categorize any unseen
 text data.
 
 In general, all these learning-based categorization methods rely on discrimina
 tive features of text objects to distinguish categories, and they would combine mul
 tiple features in a weighted manner where the weights are automatically learned
-(i.e., adjusted to minimize errors of categorization on the training data). Different
-methods tend to vary in their way of measuring the errors on the training data, i.e.,
+(ie, adjusted to minimize errors of categorization on the training data). Different
+methods tend to vary in their way of measuring the errors on the training data, ie,
 
 
 they may optimize a different objective function (also called a loss/cost function),
-and their way of combining features (e.g., linear vs. non-linear).
+and their way of combining features (eg, linear vs. non-linear).
 
 In the rest of the chapter, we will further discuss learning-based approaches
 in more detail. These automatic categorization methods generally fall into three
@@ -10462,7 +10462,7 @@ categories. Lazy learners or instance-based classifiers do not model the class l
 explicitly, but compare the new instances with instances seen before, usually with
 a similarity measure. These models are called “lazy” due to their lack of explicit
 generalization or training step; most calculation is performed at testing time.
-Generative classifiers model the data distribution in each category (e.g., unigram
+Generative classifiers model the data distribution in each category (eg, unigram
 language model for each category). They classify an object based on the likelihood
 that the object would be observed according to each distribution. Discriminative
 classifiers compute features of a text object that can provide a clue about which
@@ -10513,10 +10513,10 @@ labels of the data. In fact, we will have to use the true labels in order to lea
 good function f (.) to take unseen document vectors and classify them. For this
 reason, we often split our corpus X into two parts: training data and testing data.
 The training portion is used to build the classifier, and the testing portion is used
-to evaluate the performance (e.g., seeing how many correct labels were predicted).
+to evaluate the performance (eg, seeing how many correct labels were predicted).
 
 But what does the function f (.) actually do? Consider this very simple example
-that determines whether a news article has positive or negative sentiment, i.e.,
+that determines whether a news article has positive or negative sentiment, ie,
 Y = {positive, negative}:
 
 f (x) =
@@ -10620,7 +10620,7 @@ sents sentence, which is composed of a noun phrase (NP) followed by a verb phras
 except the roots of all subtrees. This captures a more abstract view of the produc
 tion rules, focused more on structure. Lastly, the right square is a fully abstracted
 structural feature set, with no syntactic category labels at all. The authors found
-that these structural features combined with low-level lexical features (i.e., unigram
+that these structural features combined with low-level lexical features (ie, unigram
 words) improved the classification accuracy over using only one feature type.
 
 Another interesting feature generation method is described in Massung and
@@ -10636,7 +10636,7 @@ error correction.
 While this itself is a specific application task, the series of edits performed on
 each sentence can also be used to represent the sentences themselves. For example,
 
-{insert(the) : 3, substitute(a → an) : 1, . . . , remove(of ) : 2}
+{insert(the) : 3, substitute(a → an) : 1,  , remove(of ) : 2}
 
 could be a feature vector for a particular sentence. This is just one example of a
 feature representation that goes beyond bag-of-words. The effectiveness of these
@@ -10877,7 +10877,7 @@ partition of the total corpus is also sometimes used; this is the development se
 used for parameter tuning. Typically, a corpus is split into about 80% training, 10%
 development, and 10% testing. For example, consider the problem of determining
 a good k value for k-NN. An index is created over the training documents, for
-(e.g.) k = 5. The accuracy is determined using the development documents. This
+(eg) k = 5. The accuracy is determined using the development documents. This
 is repeated for k = 10, 15, 20, 25. The best-performing k-value is then finally run on
 the testing set to find the overall accuracy. The purpose of the development set is
 to prevent overfitting, or tailoring the learning algorithm too much to a particular
@@ -10893,7 +10893,7 @@ is high, it means that the accuracies are not very similar between folds. Having
 one fold with a very high accuracy suggests that your learning algorithm may have
 overfit during that training stage; when using that trained algorithm on a separate
 corpus, it’s likely that the accuracy would be very low since it modeled noise or other
-uninformative features from that particular split (i.e., it overfit).
+uninformative features from that particular split (ie, it overfit).
 
 Another important concept is baseline accuracy. This represents the minimum
 score to “beat” when using your classifier. Say there are 3,000 documents consisting
@@ -10935,7 +10935,7 @@ cent one can be found in Aggarwal and Zhai [2012] where one chapter is devoted t
 this topic. Yang [1999] includes a systematic empirical evaluation of multiple com
 monly used text categorization methods and a discussion of text categorization
 evaluation. Moreover, since text categorization is often performed by using super
-vised machine learning, any book on machine learning is relevant (e.g., Mitchell
+vised machine learning, any book on machine learning is relevant (eg, Mitchell
 1997).
 
 16Text Summarization
@@ -11007,7 +11007,7 @@ generation in our discussion of abstractive techniques.
 
 Following the pattern of previous chapters, we then move on to evaluation of text
 summarization. The two methods each have evaluation metrics that are particularly
-focused towards their respective implementation, but it is possible to use (e.g.) an
+focused towards their respective implementation, but it is possible to use (eg) an
 abstractive evaluation metric on a summary generated by an extractive algorithm.
 Finally, we look into some applications of text summarization and see how they are
 implemented in real-world systems.
@@ -11037,7 +11037,7 @@ Step one is portrayed in Figure 16.1. The sentences in the document are traverse
 in order and a normalized, symmetric similarity measure (see Chapter 14) is applied
 on adjacent pairs of sentences. The plot on the right-hand side of the figure shows
 the change in similarity between the sentences. We can inspect these changes to
-segment the document into passages when the similarity is low, i.e., a shift in topic
+segment the document into passages when the similarity is low, ie, a shift in topic
 occurs. An alternative approach to this segmentation is to simply use paragraphs
 if the document being operated on contains that information, although most of
 the time this is not the case. This rudimentary partitioning strategy is a task in
@@ -11069,7 +11069,7 @@ selected list S is defined as
 
 16.3 Abstractive Text Summarization 321
 
-The R \ S notation may be read as “R set minus S”, i.e., all the elements in R that
+The R \ S notation may be read as “R set minus S”, ie, all the elements in R that
 are not in S. The MMR formulation uses λ ∈ [0, 1] to control relevance versus re
 dundancy; the positive relevance score is discounted by the amount of redundancy
 (similarity) to the already-selected sentences. Again, the two similarity metrics may
@@ -11108,7 +11108,7 @@ words from this probability distribution.
 
 
 Say we have the unigram language model θ estimated on a document we wish
-to summarize. We wish to draw words w1, w2, w3, . . . from θ that will comprise
+to summarize. We wish to draw words w1, w2, w3,  from θ that will comprise
 our summary. We want the word wi to occur in our summary with about the same
 probability it occurred in the original document—this is how our generated text
 will approximate the longer document. Figure 16.3 depicts how we can accomplish
@@ -11129,7 +11129,7 @@ p(cat) + p(dog) + p(a) 0.038
 
 ...
 
-p(cat) + p(dog) + p(a) + . . . + p(zap) 1.0
+p(cat) + p(dog) + p(a) +  + p(zap) 1.0
 
 Say we generate a random number x1 using a uniform distribution on [0, 1]. This
 is denoted as x1 ∼ U(0, 1). Now imagine that x1 = 0.032. We go to the cumulative
@@ -11150,7 +11150,7 @@ language model gives us a distribution of words that occur after wi and we draw
 the next word from there in the same way depicted in Figure 16.3.
 
 The sentence generation from a bigram language model proceeds as follows:
-start with (e.g.) The. Then, pick from the distribution p(w | The) using the cu
+start with (eg) The. Then, pick from the distribution p(w | The) using the cu
 mulative sum technique. The next selected word could be cat. Then, we use the
 distribution p(w | cat) to find the next w, and so on. While the unigram model only
 had one “sum table” (Figure 16.3), the bigram case needs V tables, one for each w′
@@ -11255,7 +11255,7 @@ complete set of correct sentences).
 
 A laborious yet accurate evaluation would have human annotators create a gold
 standard summary. This “perfect” summary would be compared with the generated
-one, and some measure (e.g., ROUGE) would be used to quantify the difference.
+one, and some measure (eg, ROUGE) would be used to quantify the difference.
 For the comparison measure, we have many possibilities—any measure that can
 compare two groups of text would be potentially applicable. For example, we can
 use the cosine similarity between the gold standard and generated summary. Of
@@ -11297,7 +11297,7 @@ mentioned much more in detail in Chapter 19. Summarization is an excellent
 example of this application. For example, consider a financial summarizer with text
 reports from the Securities and Exchange Commission (SEC) as well as raw stock
 market data. Summarizing both these data sources in one location would be very
-valuable for (e.g.) mutual fund managers or other financial workers. Being able to
+valuable for (eg) mutual fund managers or other financial workers. Being able to
 summarize (in text) a huge amount of structured trading data could reveal patterns
 that humans would otherwise be unaware of—this is an example of knowledge
 discovery.
@@ -11368,7 +11368,7 @@ in text and analyzing them. How to do this is a main topic of this chapter.
 We can view a topic as describing some knowledge about the world as shown
 in Figure 17.1. From text data, we want to discover a number of topics which can
 provide a description about the world. That is, a topic tells us something about the
-world (e.g., about a product or a person).
+world (eg, about a product or a person).
 
 Besides text data, we often also have some non-text data which can be used as
 additional context for analyzing the topics. We might know the time associated
@@ -11404,7 +11404,7 @@ need to specify a number of topics.
 
 
 The output includes the k topics that we would like to discover denoted by
-θ1, . . . , θk, and the coverage of topics in each document of di, which is denoted
+θ1,  , θk, and the coverage of topics in each document of di, which is denoted
 by πij . πij is the probability of document di covering topic θj . For each document,
 we have a set of such π values to indicate to what extent the document covers each
 topic. We assume that these probabilities sum to one, which means that we assume
@@ -11505,7 +11505,7 @@ estimated coverage of sports. This obviously is also not desirable.
 
 Our analysis of this simple example thus reveals a few problems of this approach.
 First, when we count what words belong to a topic, we also need to consider related
-words. We cannot simply just count the extracted term denoting a topic (e.g.,
+words. We cannot simply just count the extracted term denoting a topic (eg,
 sports), which may not occur at all in a document about the topic. On the other
 hand, there are many words related to the topic like basketball and game, which
 should presumably also be counted when estimating the coverage of a topic.
@@ -11544,7 +11544,7 @@ be used to (potentially) describe multiple topics.
 
 
 It turns out that all these can be elegantly achieved by using a probability distri
-bution over words (i.e., a unigram language model) to denote a topic, as shown in
+bution over words (ie, a unigram language model) to denote a topic, as shown in
 Figure 17.7. Here, you see that for every topic, we have a word distribution over all
 the words in the vocabulary.
 
@@ -11560,7 +11560,7 @@ forming a probability distribution over all the words.
 Such a word distribution represents a topic in that if we sample words from the
 distribution, we tend to see words that are related to the topic. It is also interesting
 to note that as a very special case, if the probability of the mass is concentrated
-entirely on just one word, e.g., sports, then the word distribution representation
+entirely on just one word, eg, sports, then the word distribution representation
 of a topic would degenerate to the simplest representation of a topic as just one
 single word discussed before. In this sense, the word distribution representation
 is a natural generalization and extension of the single-term representation.
@@ -11613,14 +11613,14 @@ topic a word distribution. That is, each θi is now a word distribution, and we 
 As a computation problem, our input is text data, a collection of documents C,
 and we assume that we know the number of topics, k, or hypothesize that there
 are k topics in the text data. As part of our input, we also know the vocabulary V ,
-which determines what units would be treated as the basic units (i.e., words) for
+which determines what units would be treated as the basic units (ie, words) for
 analysis. In most cases, we will use words as the basis for analysis simply because
 they are the most natural units, but it is easy to generalize such an approach to
 use phrases or any other units that we can identify in text, as the basic units and
 treat them as if they were words. Our output consists of two families of probability
 distributions. The first is a set of topics represented by a set of θi’s, each of which is
 a word distribution. The second is a topic coverage distribution for each document
-di, {πi1, . . . , πik}.
+di, {πi1,  , πik}.
 
 The question now is how to generate such output from our input. There are
 potentially many different ways to do this, but here we introduce a general way of
@@ -11628,7 +11628,7 @@ solving this problem called a generative model. This is, in fact, a very general
 and a principled way of using statistical modeling to solve text mining problems.
 
 The basic idea of this approach is to first design a generative model for our data,
-i.e., a probabilistic model to model how the data are generated, or a model that can
+ie, a probabilistic model to model how the data are generated, or a model that can
 allow us to compute the probability of how likely we will observe the data we have.
 The actual data aren’t necessarily (indeed often unlikely) generated this way, but
 by assuming the data to be generated in a particular way according to a particular
@@ -11719,7 +11719,7 @@ can help distinguish subtle semantic variations, so we generally should retain t
 word frequencies.
 
 Once we decide on a perspective to view the data, we will design a specific model
-for generating the data from the desired perspective, i.e., model the data based
+for generating the data from the desired perspective, ie, model the data based
 on the representation of the data reflecting the desired perspective. The choice of
 a particular model partly depends on our domain knowledge about the data and
 partly depends on what kind of knowledge we would like to discover. The target
@@ -11729,7 +11729,7 @@ the values of these parameters).
 
 Here we are interested in discovering a topic represented as a word distribution,
 so a natural choice of model would be a unigram language model, as in Section 3.4.
-After we specify the model, we can formally write down the likelihood function, i.e.,
+After we specify the model, we can formally write down the likelihood function, ie,
 the probability of the data given the assumed model. This is generally a function
 of the (unknown) parameters, and the value of the function would vary according
 to the values of the parameters. Thus, we can attempt to find the parameter values
@@ -11751,7 +11751,7 @@ topic from one document; we will examine many more complicated cases later.
 The model is shown in Figure 17.10 where we see that we have decided to view a
 
 document as a sequence of words. Each word here is denoted by xi. Our model is a
-unigram language model, i.e., a word distribution that denotes the latent topic that
+unigram language model, ie, a word distribution that denotes the latent topic that
 we hope to discover. Clearly, the model has as many parameters as the number of
 words in our vocabulary, which is M in this case. For convenience, we will use θi to
 denote the probability of word wi. According to our model, the probabilities of all
@@ -11781,7 +11781,7 @@ formulas for parameter estimation.
 
 
 Now that we have a well defined likelihood function, we will attempt to find
-the parameter values (i.e., word probabilities) that maximize this likelihood func
+the parameter values (ie, word probabilities) that maximize this likelihood func
 tion. Let’s take a look at the maximum likelihood estimation problem more closely
 in Figure 17.11. The first line is the original optimization problem of finding the
 maximum likelihood estimate. The next line shows an equivalent optimization
@@ -11798,7 +11798,7 @@ tics of a log-likelihood function of some more complex generative models.
 
 . The sum is over all the unique data points (the words in the vocabulary).
 
-. Inside the sum, there’s a count of each unique data point, i.e., the count of
+. Inside the sum, there’s a count of each unique data point, ie, the count of
 each word in the observed data, which is multiplied by the logarithm of the
 probability of the particular unique data point.
 
@@ -12038,7 +12038,7 @@ words.
 
 Once we write down the likelihood function, the next question is how to esti
 mate the parameters. As in the case of the single unigram language model, we
-can use any method (e.g., the maximum likelihood estimator) to estimate the pa
+can use any method (eg, the maximum likelihood estimator) to estimate the pa
 rameters, which can then be regarded as the knowledge that we discover from
 the text.
 
@@ -12111,7 +12111,7 @@ also estimate both by using the maximum likelihood estimation, but in such a cas
 we would no longer be able to guarantee that we will obtain a distribution θB that
 
 
-assigns high probabilities to common words. For our application scenario (i.e.,
+assigns high probabilities to common words. For our application scenario (ie,
 factoring out common words), it is more appropriate to pre-set the background
 word distribution to bias the model toward allocating the common words to the
 background word distribution, and thus allow the topic word distribution to focus
@@ -12163,7 +12163,7 @@ can’t give both words a probability of one, or otherwise they would sum to 2.0
 How should we allocate the probability between the two words? As we shift
 probability mass from one word to the other, it would clearly affect the value of the
 likelihood function. Imagine we start with an even allocation between the and text,
-i.e., each would have a probability of 0.5. We can then imagine we could gradually
+ie, each would have a probability of 0.5. We can then imagine we could gradually
 move some probability mass from the to text or vice versa. How would such a change
 affect the likelihood function value?
 
@@ -12272,7 +12272,7 @@ the unknown distribution θd to assign a somewhat higher probability to this wor
 
 We can also use this example to examine the impact of p(θB), the probability of
 choosing the background model. We’ve been so far assuming that each model is
-equally likely, i.e., p(θB) = 0.5. But, you can again look at this likelihood function
+equally likely, ie, p(θB) = 0.5. But, you can again look at this likelihood function
 shown in Figure 17.21 and try to picture what would happen to the likelihood
 function if we increase the probability of choosing the background model.
 
@@ -12337,7 +12337,7 @@ Unlike the simplest unigram language model, whose ML estimate has an analyti
 cal solution, there is no analytical solution to the ML estimation problem for the
 two-component mixture model even though we have exactly the same number of
 parameters to estimate as a single unigram language model after we fix the back
-ground model and the choice probability of the component models (i.e., p(θd)). We
+ground model and the choice probability of the component models (ie, p(θd)). We
 must use a numerical optimization algorithm to compute the ML estimate.
 
 In this section, we introduce a specific algorithm for computing the ML esti
@@ -12406,7 +12406,7 @@ illustrated in Figure 17.23.
 
 The Bayesian inference involved here is a typical one where we have some prior
 about how likely each of these two distributions is used to generate any word
-(i.e., p(θd) and p(θB)). These are prior because they encode our belief about which
+(ie, p(θd) and p(θB)). These are prior because they encode our belief about which
 distribution before we even observe the word text; a prior that has very high p(θd)
 
 would encourage us to lean toward guessing θd for any word. Such a prior is then
@@ -12462,7 +12462,7 @@ With the E-step and M-step as the basis, the EM algorithm works as follows.
 First, we initialize all the (unknown) parameters values randomly. This allows us
 to have a complete specification of the mixture model, which further enables us
 to use Bayes’ rule to infer which distribution is more likely to generate each word.
-This prediction (i.e., E-step) essentially helps us (probabilistically) separate words
+This prediction (ie, E-step) essentially helps us (probabilistically) separate words
 generated by the two distributions. Finally, we will collect all the probabilistically
 allocated counts of words belonging to our topic word distribution and normalize
 them into probabilities, which serve as an improved estimate of the parameters.
@@ -12499,7 +12499,7 @@ and use the allocated counts for θd to improve its estimation, leading to a new
 generation of improved parameter values, which can then be used to perform a
 new iteration of E-step and M-step to further improve the parameter estimation.
 
-In the M-step, we adjust the count c(w, d) based on p(z = 0 | w) (i.e., probability
+In the M-step, we adjust the count c(w, d) based on p(z = 0 | w) (ie, probability
 that the word w is indeed from θd) so as to obtain a discounted count c(w, d)p(z =
 0 | w) which can be interpreted as the expected count of the event that word w is
 generated from θd . Similarly, θB has its own share of the count, which is c(w, d)p(z =
@@ -12520,7 +12520,7 @@ In Figure 17.25, we further illustrate in detail what happens in each iteration 
 the EM algorithm. First, note that we used superscripts in the formulas of the E-
 step and M-step to indicate the generation of parameters. Thus, the M-step is seen
 to use the n-th generation of parameters together with the newly inferred z values
-to obtain a new (n + 1)th generation of parameters (i.e., pn+1(w | θd)). Second, we
+to obtain a new (n + 1)th generation of parameters (ie, pn+1(w | θd)). Second, we
 assume the two component models (θd and θB) have equal probabilities; we also
 assume that the background model word distribution is known (fixed as shown in
 the third column of the table).
@@ -12533,7 +12533,7 @@ the parameters to be estimated. In our case, we set all the probabilities to 0.2
 the fourth column of the table.
 
 In the first iteration of the EM algorithm, we will apply the E-step to infer
-which of the two distributions has been used to generate each word, i.e., to com
+which of the two distributions has been used to generate each word, ie, to com
 pute p(z = 0 | w) and p(z = 1 | w). We only showed p(z = 0 | w), which is needed
 in our M-step (p(z = 1 | w) = 1 − p(z = 0 | w)). Clearly, p(z = 0 | w) has different
 values for different words, and this is because these words have different prob
@@ -12572,14 +12572,14 @@ vide an intuitive explanation of why it converges to a local maximum later.
 
 For now, it is worth pointing out that while the main goal of our EM algorithm
 is to obtain a more discriminative word distribution to represent the topic that we
-hope to discover, i.e., p(w | θd), the inferred p(z = 0 | w) after convergence is also
+hope to discover, ie, p(w | θd), the inferred p(z = 0 | w) after convergence is also
 meaningful and may sometimes be a useful byproduct. Specifically, these are the
 probabilities that a word is believed to have come from the topic distribution, and
 we can add them up to obtain an estimate of to what extent the document has cov
 ered background vs. content, or to what extent the content of the document deviates
 from a “typical” background document. This would give us a single numerical score
 for each document, so we can then use the score to compare different documents
-or different subsets of documents (e.g., those associated with different authors or
+or different subsets of documents (eg, those associated with different authors or
 from different sources). Thus, our simple two-component mixture model can not
 only help us discover a single topic from the document, but also provide a useful
 measure of “typicality” of a document which may be useful in some applications.
@@ -12590,7 +12590,7 @@ and the Y-axis denotes the likelihood function value. This is an over-simplifica
 since θd is an M-dimensional vector, but the one-dimensional view makes it much
 easier to understand the EM algorithm. We see that, in general, the original like
 lihood function (as a function of θd) may have multiple local maxima. The goal of
-computing the ML estimate is to find the global maximum, i.e., the θd value that
+computing the ML estimate is to find the global maximum, ie, the θd value that
 makes the likelihood function reach it global maximum.
 
 The EM algorithm is a hill-climbing algorithm. It starts with an initial (random)
@@ -12673,7 +12673,7 @@ a word distribution (or more generally a term distribution). Second, we assume
 that a text document is a sample of words drawn from a probabilistic model.
 We illustrate these two assumptions in Figure 17.27, where we see a blog article
 about Hurricane Katrina and some imagined topics, each represented by a word
-distribution, including, e.g., a topic on government response (θ1), a topic on the
+distribution, including, eg, a topic on government response (θ1), a topic on the
 flood of the city of New Orleans (θ2), a topic on donation (θk), and a background
 topic θB. The article is seen to contain words from all these distributions. Specif
 ically, we see there is a criticism of government response at the beginning of this
@@ -12754,7 +12754,7 @@ ination of the discovered topic models. Second, we see the background language
 model p(w | θB), which we also assume is known. We can use any large collection
 of text, or use all the text that we have available in collection C to estimate p(w | θB)
 
-(e.g., assuming all the text data are generated from θB, we can use the ML estimate
+(eg, assuming all the text data are generated from θB, we can use the ML estimate
 to set p(w | θB) to the normalized count of word w in the data). Third, we see πd ,j ,
 which indicates the coverage of topic θj in document d. This parameter encodes the
 knowledge we hope to discover from text. Finally, we see the k word distributions,
@@ -12786,7 +12786,7 @@ the probabilities of all the words in each topic sum to one.
 As in the case of simple mixture models, we can also use the EM algorithm to
 compute the ML estimate for PLSA. In the E-step, we have to introduce more hidden
 variables because we have more topics. Our hidden variable z, which is a topic
-indicator for a word, now would take k + 1 values {1, 2, . . . , k , B}, corresponding
+indicator for a word, now would take k + 1 values {1, 2,  , k , B}, corresponding
 to the k topics and the extra background topic. The E-step uses Bayes’ Rule to
 infer the probability of each value for z, as shown in Figure 17.32. A comparison
 between these equations as the E-step for the simple two-component mixture
@@ -12977,9 +12977,9 @@ the pseudo counts for all the words) to ensure the estimated word probabilities 
 a topic sum to one.
 
 Here, μ ∈ [0, +∞) is a parameter encoding the strength of our prior. If μ = 0,
-we recover the original EM algorithm for PLSA, i.e., with no prior influence. A
+we recover the original EM algorithm for PLSA, ie, with no prior influence. A
 more interesting case is when μ = +∞, in such a case, the M-step is simply to set
-the estimated probability of a word p(w | θj) to the prior i.e., the word
+the estimated probability of a word p(w | θj) to the prior ie, the word
 
 distribution is fixed to the prior. This is why we can interpret our heuristic inclusion
 of a background word distribution as a topic in PLSA as simply imposing such an
@@ -13017,7 +13017,7 @@ model.
 Specifically, in LDA, the topic coverage distribution (a multinomial distribution)
 for each document is assumed to be drawn from a prior Dirichlet distribution,
 which defines a distribution over the entire space of the parameters of a multi-
-nomial distribution, i.e., a vector of probabilities of topics. Similarly, all the word
+nomial distribution, ie, a vector of probabilities of topics. Similarly, all the word
 distributions representing the latent topics in a collection of text are also assumed
 to be drawn from another Dirichlet distribution. In PLSA, both the topic coverage
 distribution and the word distributions are assumed to be (unknown) parameters
@@ -13034,8 +13034,8 @@ the same as in PLSA. The generalization of PLSA to LDA by imposing Dirichlet pri
 is illustrated in Figure 17.36, where we see that the Dirichlet distribution governing
 
 
-the topic coverage has k parameters, α1, . . . , αk, and the Dirichlet distribution
-governing the topic word distributions has M parameters, β1, . . . , βM . Each αi can
+the topic coverage has k parameters, α1,  , αk, and the Dirichlet distribution
+governing the topic word distributions has M parameters, β1,  , βM . Each αi can
 be interpreted as the pseudo count of the corresponding topic θi according to our
 prior, while each βi can be interpreted as the pseudo count of the corresponding
 word wi according to our prior. With no additional knowledge, they can all be set
@@ -13047,7 +13047,7 @@ The likelihood function of LDA is given in Figure 17.37 where we also make
 a comparison between the likelihood of PLSA and that of LDA. The comparison
 allows us to see that both PLSA and LDA share the common generative model
 component to define the probability of observing a word w in document d from
-a mixture model involving k word distributions, θ1, . . . , θk, representing k topics
+a mixture model involving k word distributions, θ1,  , θk, representing k topics
 with a topic coverage distribution πd ,j . Indeed, such a mixture of unigram language
 models is the common component in most topic models, and is key for modeling
 documents with multiple topics covered in the same document. However, the like
@@ -13064,7 +13064,7 @@ complicated than LDA.
 
 It is now easy to see that LDA has only k + M parameters, far fewer than PLSA.
 However, the cost is that the interesting output that we would like to generate in
-topic analysis, i.e., the k word distributions {θi} characterizing all the topics in a
+topic analysis, ie, the k word distributions {θi} characterizing all the topics in a
 collection, and the topic coverage distribution {πd ,j} for each document, is unfor
 tunately, no longer immediately available to us after we estimate all the parameters.
 Indeed, as usually happens in Bayesian inference, to obtain values of such latent
@@ -13172,7 +13172,7 @@ treat the inferred topic coverage distribution in a document as an alternative w
 of representing the document in a low-dimensional semantic space where each
 dimension corresponds to a topic. Such a representation can supplement the bag-
 of-words representation to enhance inexact matching of words in the same topic,
-which can generally be beneficial (e.g., for information retrieval, text clustering,
+which can generally be beneficial (eg, for information retrieval, text clustering,
 and text categorization).
 
 Finally, a variant of PLSA called latent Dirichlet allocation (LDA) extends PLSA
@@ -13246,7 +13246,7 @@ of course, we want the opinion content. If you can identify these, we get a basi
 understanding of opinions. If we want to understand further, we need an enriched
 opinion representation. That means we also want to understand, for example,
 the context of the opinion and in what situation the opinion was expressed. We
-would also like to understand the opinion sentiment; i.e., whether it is a positive
+would also like to understand the opinion sentiment; ie, whether it is a positive
 or negative feeling.
 
 
@@ -13366,7 +13366,7 @@ the next section.
 
 For now, let’s talk about some features that are often very useful for text cat
 egorization and text mining in general, but also especially needed for sentiment
-analysis. The simplest feature is character n-grams, i.e., sequences of n adjacent
+analysis. The simplest feature is character n-grams, ie, sequences of n adjacent
 characters treated as a unit. This is a very general and robust way to represent text
 data since we can use this method for any language. This is also robust to spelling
 errors or recognition errors; if you misspell a word by one character, this representa
@@ -13412,7 +13412,7 @@ more closely together, and such patterns provide more discriminative features
 than words. They may generalize better than just regular n-grams because they are
 frequent, meaning they are expected to occur in testing data, although they might
 still face the problem of overfitting as the features become more complex. This is a
-problem in general, and the same is true for parse tree-based features, e.g., frequent
+problem in general, and the same is true for parse tree-based features, eg, frequent
 subtrees. Those are even more discriminating, but they’re also more likely to cause
 overfitting.
 
@@ -13447,7 +13447,7 @@ case of sentiment analysis, feature engineering is a critical task.
 18.2 Ordinal Regression
 In this section, we will discuss ordinal logistic regression for sentiment analysis.
 A typical sentiment classification problem is related to rating prediction because
-we often try to predict sentiment value on some scale, e.g., positive to negative
+we often try to predict sentiment value on some scale, eg, positive to negative
 with other labels in between. We have an opinionated text document d as input,
 and we want to generate as output a rating in the range of 1 through k. Since
 it’s a discrete rating, this could be treated as a categorization problem (finding
@@ -13689,7 +13689,7 @@ of overall ratings based on text, but also model the generation of the text itse
 natural solution would be to use a topic model.
 
 Given an entity, we can assume there are aspects that are described by word
-distributions (i.e., topics). We then use a topic model to model the generation
+distributions (ie, topics). We then use a topic model to model the generation
 of the reviewed text. We assume words in the review text are drawn from these
 distributions in the same way as we assumed in PLSA. Then, we can plug in the
 latent regression model to use the text to further predict the overall rating. To
@@ -13721,7 +13721,7 @@ This kind of lexicon is very useful because in general, a word like long may hav
 different sentiment polarities for different contexts. If we see “The battery life of
 this laptop is long,” then that’s positive. But if we see “The rebooting time for the
 laptop is long,” then that’s clearly not good. Even for reviews about the same prod
-uct (i.e., a laptop) the word long is ambiguous. However, with this kind of lexicon,
+uct (ie, a laptop) the word long is ambiguous. However, with this kind of lexicon,
 we can learn whether a word is positive or negative for a particular aspect. Such
 a lexicon can be directly used to tag other reviews about hotels or tag comments
 about hotels in social media.
@@ -13821,7 +13821,7 @@ we can use techniques such as cross-fold validation to determine the effectivene
 of our method. Additionally, feature selection can show which features are the most
 
 
-useful for determining whether a sentence (e.g.) is positive or negative. Based on the
+useful for determining whether a sentence (eg) is positive or negative. Based on the
 useful features, we can either adjust the algorithm or try to fine-tune the feature set.
 
 From a topic analysis viewpoint, we would like to ensure that the topics are
@@ -13843,7 +13843,7 @@ Opinion mining and sentiment analysis have been extensively studied. Two ex
 cellent books on this general topic are the book Opinion Mining and Sentiment
 Analysis [Pang and Lee 2008] and the book Sentiment Analysis and Opinion Min
 ing [Liu 2012]. Multiple extensions of topic models for analyzing opinionated topics
-have been made (e.g., topic-sentiment mixture model [Mei et al. 2007a], multi-grain
+have been made (eg, topic-sentiment mixture model [Mei et al. 2007a], multi-grain
 topic model [Titov and McDonald 2008], and aspect and sentiment unification
 model [Jo and Oh 2011]). Techniques for Latent Aspect Rating Analysis are mainly
 covered in two KDD papers [Wang et al. 2010], [Wang et al. 2011].
@@ -13930,7 +13930,7 @@ Such an analysis task is different from a task such as topic mining where the go
 to directly characterize the content of text. In text-based prediction, our goal can be
 to infer any information about the world. This is, of course, only possible if there
 exist clues in the text data about the target variable; fortunately, this is often the
-case since people report everything in text data. In many cases (e.g., stock price
+case since people report everything in text data. In many cases (eg, stock price
 prediction), the non-text data (historical stock prices) are much more effective for
 prediction than text data, though text data can generally help provide additional
 indicators for the prediction task.
@@ -13968,7 +13968,7 @@ The benefit of joint analysis of text and non-text data can be seen from two dif
 ent perspectives. First, non-text data can enrich text analysis. Specifically, non-text
 data can often provide a context for mining text data and thus enable us to partition
 
-data in different ways based on the companion non-text data (e.g., partitioning text
+data in different ways based on the companion non-text data (eg, partitioning text
 based on time or location). This opens up possibilities of contextual text mining, or
 mining text data in the context defined by non-text data to discover context-specific
 knowledge (such as topics associated with a specific non-text variable such as time),
@@ -13986,7 +13986,7 @@ is called pattern annotation and discussed in detail in Mei et al. [2006].
 In this section, we discuss how to use non-text data as context to enrich topic
 analysis of text data. Such analysis techniques can be regarded as an extension
 of topic analysis to further reveal the correlation of topics and any associated
-context (e.g., time or location). When topics represent opinions, we may also reveal
+context (eg, time or location). When topics represent opinions, we may also reveal
 context-dependent opinions. Contextual text mining can be very useful for text-
 based prediction because it allows us to combine non-text data with text data to
 derive potentially very effective sophisticated predictors.
@@ -14068,7 +14068,7 @@ context associated with text.
 
 Recall that in PLSA the text data are generated by first selecting a topic and then
 generating a word from a topic. The topics are shared by all the documents in the
-collection, but the selection probability (i.e., coverage of topics) is specific to a
+collection, but the selection probability (ie, coverage of topics) is specific to a
 document. In CPLSA, the generation process is similar, but since we assume that
 we have context information (time or location) about a document, the generation of
 words in the document may be conditioned on the specific context of the document.
@@ -14117,7 +14117,7 @@ a particular context associated to contribute to the learning of the topic cover
 Once a view of topics and a topic coverage distribution have been chosen, the
 rest of the generation process is exactly the same as in PLSA. That is, we will use
 the topic coverage and selection distribution to sample a topic, and then use the
-corresponding word distribution of the topic (i.e., chosen view of the topic) to gen
+corresponding word distribution of the topic (ie, chosen view of the topic) to gen
 erate a word. In such a generation process, each word can be potentially generated
 using a different view and a different topic coverage distribution depending on the
 contexts chosen to direct the generation process. Note that the context that deter
@@ -14186,7 +14186,7 @@ United Nations show different variations of the topic in the two wars, and revea
 more detailed understanding of topics in a context-specific way. This table is not
 only immediately useful for understanding the major topics and their variations
 in these two sets of news articles, but can also serve as entry points to facilitate
-browsing into very specific topics in the text collection; e.g., each cell can be made
+browsing into very specific topics in the text collection; eg, each cell can be made
 clickable to enable a user to examine the relevant discussion in the news articles
 in detail.
 
@@ -14214,7 +14214,7 @@ more discussion about the flooding of the city, but not the discussion of oil pr
 The bottom figure shows the coverage of the topic about flooding of the city New
 Orleans by blog article authors in different locations (different states in the U.S.).
 We see that the topic was initially heavily covered by authors in the victim areas
-(e.g., Louisiana), but the topic was then picked up by the authors in Texas, which
+(eg, Louisiana), but the topic was then picked up by the authors in Texas, which
 might be explained by the move of people from the state of Louisiana to Texas.
 Thus, these topical trends not only are themselves useful for revealing the topics
 
@@ -14255,7 +14255,7 @@ after an event as different contexts and apply CPLSA.
 
 The results on the top show that before TREC, the study of retrieval models
 was mostly on the vector space model and Boolean models, but after TREC, the
-study of retrieval models apparently explored a variety application tasks (e.g., XML
+study of retrieval models apparently explored a variety application tasks (eg, XML
 
 retrieval, email retrieval, and subtopic retrieval, which are connected to some tasks
 introduced in TREC over the years). The results on the bottom show that before
@@ -14291,7 +14291,7 @@ in two subnetworks can be revealed by doing this type of joint analysis.
 
 We now introduce a specific technique for analysis of text with network as
 context called a network supervised topic model. The general idea of such a model
-is illustrated in Figure 19.10. First, we can view any generative model (e.g., PLSA) as
+is illustrated in Figure 19.10. First, we can view any generative model (eg, PLSA) as
 defining an optimization problem where the variables are the parameters (denoted
 by  here in the figure), and the objective function is the likelihood function.
 From the perspective of mining text data, the estimated parameter values ∗ can
@@ -14459,7 +14459,7 @@ the topics from this set that have the strongest correlation with the external t
 series.
 
 However, this approach is not optimal because the content of the topics would
-have been discovered solely based on the text data (e.g., maximizing the likelihood
+have been discovered solely based on the text data (eg, maximizing the likelihood
 function) without consideration of the time series at all. Indeed, the discovered
 topics would tend to be the major topics that explain the text data well (as they
 should be), but they are not necessarily correlated with time series. Even if we
@@ -14547,7 +14547,7 @@ another series. Formally, let yt and xt be two time series to be tested, where w
 hope to see if xt has Granger causality for yt with a maximum p time lag. The basic
 formula for the Granger test is the following:
 
-yt = a0 + a1yt−1 + . . . + apyt−p + b1xt−1 + . . . + bpxt−p. (19.1)
+yt = a0 + a1yt−1 +  + apyt−p + b1xt−1 +  + bpxt−p. (19.1)
 
 We then perform an F -test to evaluate if retaining or removing the lagged x terms
 would make a statistically significant difference in fitting the data. Because the
@@ -14582,7 +14582,7 @@ We would like to see whether we can discover biased topics toward either Amer
 ican Airlines or Apple when we use their corresponding time series as context. The
 results here show that the iterative causal topic modeling approach indeed gener
 ates topics that are more tuned toward each stock time series. Specifically, on the
-left column, we see topics highly relevant to American Airlines, including, e.g., a
+left column, we see topics highly relevant to American Airlines, including, eg, a
 topic about airport and airlines, and another about terrorism (the topic is relevant
 because of the September 11th terrorist attack in 2001, which negatively impacted
 American Airlines), though the correlation of other topics with American Airlines
@@ -14603,13 +14603,13 @@ context.
 In Figure 19.18, we see some additional results from analyzing presidential
 election time series. The time series data used here is from the Iowa Electronic
 market, and the text data is the New York Times data from May–October 2000 that
-matched at least one candidate’s name (i.e., either Bush or Gore). The goal here was
+matched at least one candidate’s name (ie, either Bush or Gore). The goal here was
 to see if we can use causal topic mining to help understand what issues mattered
 in the 2000 presidential campaign and election. The results shown here are the
 top three words from the most significant (causal) topics from New York Times.
 Intuitively, they are indeed quite related to the campaign. The high relevance of
 topics discovered is at least partly due to the use of the presidential candidate
-names as an additional context (i.e., as filters), which helped eliminate a lot of non-
+names as an additional context (ie, as filters), which helped eliminate a lot of non-
 relevant text data. However, what is interesting is that the list does contain a few
 topics that are known to be important in that presidential election, including tax
 cut, oil energy, abortion, and gun control (see Kim et al. [2013] for a more detailed
@@ -14728,7 +14728,7 @@ of data selection (reduction) is logically the very first step we should take wh
 tackling the scalability problem caused by the size of data. Secondly, it provides
 knowledge provenance in the sense that it allows a user to easily navigate into any
 source to examine its reliability in depth. At this extreme, the computer has done
-the minimum, if anything at all, to support text analysis. However, the system (i.e.,
+the minimum, if anything at all, to support text analysis. However, the system (ie,
 search engine) is very robust and can handle large amounts of data quickly.
 
 At the other extreme, the system can attempt to provide task support directly to
@@ -14788,7 +14788,7 @@ cessing. Naturally, the most important data type is a TEXTOBJECT, which can be
 defined as a sequence of words in a vocabulary set V . Clearly, a word, a phrase,
 a sentence, a paragraph, and an article can all be regarded as specific instances
 of the type TEXTOBJECT. We can then also naturally define derived data types
-based on TEXTOBJECT, including, e.g., TEXTOBJECTSET, which naturally captures
+based on TEXTOBJECT, including, eg, TEXTOBJECTSET, which naturally captures
 instances such as a collection of text articles, a set of sentences, which further
 covers a set of terms as a special case when a sentence is just a term. Another
 possibility is TEXTOBJECTSEQUENCE, where we care about order of the text objects;
@@ -14818,7 +14818,7 @@ objects into a subset of text objects. Querying, browsing, and recommenda
 tion can all be regarded as an instance of Select. We can additionally further
 apply a Ranking operator to each selection.
 
-Split. TEXTOBJECTSET → TEXTOBJECTSET, . . . , TEXTOBJECTSET. The Split operator
+Split. TEXTOBJECTSET → TEXTOBJECTSET,  , TEXTOBJECTSET. The Split operator
 maps a set of text objects into multiple subsets of text objects. Text catego
 rization and text clustering are all instances of Split.
 
@@ -14840,7 +14840,7 @@ maps a set of text objects into a set of topics.
 Interpret. {TOPIC, TEXTOBJECTSET} → TEXTOBJECTSET. The Interpret operator
 maps a topic and a set of text objects into another set of text objects.
 
-Compare. {TEXTOBJECTSET, . . . , TEXTOBJECTSET} → TOPICSET, . . . , TOPICSET. The
+Compare. {TEXTOBJECTSET,  , TEXTOBJECTSET} → TOPICSET,  , TOPICSET. The
 Compare operator maps a set of comparable sets of text objects into a set of
 common topics covered in all the comparable sets of text objects, and sets of
 context-specific topics.
@@ -14927,7 +14927,7 @@ sifier::knn.
 
 The index structure also facilitates the idea mentioned earlier: advanced text
 mining techniques are run on a smaller relevant subset of the entire dataset. For
-this, we can take the output from searching an inverted index and run (e.g.) topic
+this, we can take the output from searching an inverted index and run (eg) topic
 modeling algorithms on the relevant documents.
 
 Thus, the analysis operators such as Select and Split take META’s index objects
@@ -14952,7 +14952,7 @@ From section 2.1.5, we already know the likelihood of our binomial distribution 
 
 
 but what about the prior, p(θ)? A prior should represent some “prior belief” about
-the parameters of the model. For our coin flipping (i.e., binomial distribution), it
+the parameters of the model. For our coin flipping (ie, binomial distribution), it
 would make sense to have the prior also be proportional to the powers of θ and
 (1 − θ). Thus, the posterior will also be proportional to those powers:
 
@@ -15178,7 +15178,7 @@ three parameters. From left to right, α = 0.1, 1, 10. (From Bishop [2006])
 
 When used as a prior, we usually don’t have any specific information about the
 individual indices in the Dirichlet. Because of this, we set them all to the same
-value. So instead of writing p(θ | α), where α is (e.g.) {0.1, 0.1, . . . , 0.1}, we simply say
+value. So instead of writing p(θ | α), where α is (eg) {0.1, 0.1,  , 0.1}, we simply say
 p(θ | α), where alpha is a scalar representing a vector of identical values. θ ∼ Dir(α)
 
 and θ ∼ Dir(0.1) are also commonplace, as is θ ∼ Beta(α , β) or θ ∼ Beta(0.4, 0.1).
@@ -15266,7 +15266,7 @@ pseudo counts. Can you tell what the vector of hyperparameters for query likelih
 smoothing would be now? It’s
 
 μ = {
-μp(w1 | C), μp(w2 | C), . . . , μp(wk | C)
+μp(w1 | C), μp(w2 | C),  , μp(wk | C)
 
 }
 (A.17)
@@ -15285,7 +15285,7 @@ This implies that each word is equally likely in our collection language model,
 which is most likely not the case. Note |V | = k, or
 
 ∑k
-i=1 1 since μ = {1, 1, . . . , 1}.
+i=1 1 since μ = {1, 1, 1}.
 
 A.6 Conclusion
 Starting with the Bernoulli distribution for a single coin flip, we expanded it into a
@@ -15315,10 +15315,10 @@ model from which a data point is generated is hidden from us.
 
 Informally, the EM algorithm starts with randomly assigning values to all the pa
 rameters to be estimated. It then iteratively alternates between two steps, called the
-expectation step (i.e., the “E-step”) and the maximization step (i.e., the “M-step”),
+expectation step (ie, the “E-step”) and the maximization step (ie, the “M-step”),
 respectively. In the E-step, it computes the expected likelihood for the complete
 data (the so-called Q-function) where the expectation is taken with respect to the
-computed conditional distribution of the latent variables (i.e., the “hidden vari
+computed conditional distribution of the latent variables (ie, the “hidden vari
 ables”) given the current settings of parameters and our observed (incomplete)
 data. In the M-step, it re-estimates all the parameters by maximizing the Q-function.
 Once we have a new generation of parameter values, we can repeat the E-step and
@@ -15351,7 +15351,7 @@ McLachlan and Krishnan [2008].
 
 B.1 A Simple Mixture Unigram Language Model
 In the mixture model feedback approach [Zhai and Lafferty 2001], we assume
-that the feedback documents F = {d1, . . . , dk} are “generated” from a mixture
+that the feedback documents F = {d1, dk} are “generated” from a mixture
 model with two multinomial component models. One component model is the
 background model p(w | C) and the other is an unknown topic language model
 p(w | θF ) to be estimated. (w is a word.) The idea is to model the common (non-
@@ -15434,8 +15434,8 @@ parameter value θ and the likelihood at the current estimate θ(n), and relate 
 the corresponding difference in the complete likelihood:
 
 Our goal is to maximize L(θ) − L(θ(n)), which is equivalent to maximizing L(θ).
-Now take the expectation of this equation w.r.t. the conditional distribution of the
-hidden variable given the data X and the current estimate of parameters θ(n), i.e.,
+Now take the expectation of this equation wrt the conditional distribution of the
+hidden variable given the data X and the current estimate of parameters θ(n), ie,
 p(H | X, θ(n)).
 
 Note that the left side of the equation remains the same as the variable H
@@ -15572,7 +15572,7 @@ may depend on d. Indeed, if ps(w | d) is given, we must have
 
 Thus, individual smoothing methods essentially differ in their choice of ps(w | d).
 The collection language model p(w | C) is typically estimated
-smoothed version c(w ,C)+1 where V is an estimated vocabulary size (e.g., the
+smoothed version c(w ,C)+1 where V is an estimated vocabulary size (eg, the
 
 total number of distinct words in the collection). One advantage of the smoothed
 version is that it would never give a zero probability to any term, but in terms
@@ -15583,7 +15583,7 @@ It can be shown that with such a smoothing scheme, the KL-divergence scoring
 formula is essentially (the two sides are equivalent for ranking documents)
 
 Note that the scoring is now based on a sum over all the terms that both have
-a non-zero probability according to p(w | θ̂Q) and occur in the document, i.e., all
+a non-zero probability according to p(w | θ̂Q) and occur in the document, ie, all
 “matched” terms.
 
 C.2 Using Dirichlet Prior Smoothing
@@ -15621,7 +15621,7 @@ assume the following two component mixture model for the feedback documents,
 where one component model is p(w | θF ) and the other is p(w | C), the collection
 language model.
 
-where F = {d1, . . . , dk} is the set of feedback documents, and λ is yet another param-
+where F = {d1, dk} is the set of feedback documents, and λ is yet another param-
 eter that indicates the amount of “background noise” in the feedback documents,
 and that needs to be set empirically. Now, given λ, the feedback documents F , and
 the collection language model p(w | C), we can use the EM algorithm to compute
