@@ -64,9 +64,11 @@ def extract_relevant_and_uncompleted_questions(emailObjects, Questions_to_emails
         parsedHtml = BeautifulSoup(bodyContent, "html.parser")
         
         heading = parsedHtml.find("h1").text
+        print(heading)
         if "asked a question in Advanced Information Retrieval" in heading:
             if (msg._id, EMAIL_ID) not in  Questions_to_emails_completed:
                 question = extract_question(parsedHtml)
+                
                 filteredQuestionIdToContent[msg._id] = [heading, question]
     return filteredQuestionIdToContent
 
@@ -106,6 +108,8 @@ async def main():
         await send_mail(graph, subject, emailContent, EMAIL_ID)
         with open(QUESTION_ID_TO_EMAIL_COMPLETED_FILE, "a") as f:
             f.write(f"{questionId},{EMAIL_ID}\n")
+        # break only for demo
+        break
         time.sleep(20)
 
 # Run main
