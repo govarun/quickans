@@ -12,8 +12,8 @@ import time
 
 openai.api_key = OPENAI_API_KEY
 MODEL = "gpt-3.5-turbo"
-PREFACE = f"I am a teaching assistant and a student in my course has posed the following question. What should the answer be? Question: "
-EMAIL_ID = "ssehgal4@illinois.edu"
+PREFACE = f"I am a teaching assistant of the course Information Retrieval. A student in my course has posed the following question. Please answer the question in a empathetic manner and telling the chain of thought or related concepts if the question is advanced. Question: "
+EMAIL_ID = "varun15@illinois.edu"
 QUESTION_ID_TO_EMAIL_COMPLETED_FILE = "question_id_to_emails_completed.txt"
 
 def read_previous_questions_answered():
@@ -98,19 +98,20 @@ async def main():
 
     graph: Graph = Graph(azure_settings)
     await greet_user(graph)
-    QuestionsToEmailsCompleted = read_previous_questions_answered()
-    emailObjects = await retrieve_emails(graph)
-    filteredQuestionIdToContent = extract_relevant_and_uncompleted_questions(emailObjects, QuestionsToEmailsCompleted)
+    while True:
+        QuestionsToEmailsCompleted = read_previous_questions_answered()
+        emailObjects = await retrieve_emails(graph)
+        filteredQuestionIdToContent = extract_relevant_and_uncompleted_questions(emailObjects, QuestionsToEmailsCompleted)
 
-    for questionId, questionContent in filteredQuestionIdToContent.items():
-        answer = api_call(PREFACE, questionContent[1], MODEL)
-        subject, emailContent = formulate_email_content(questionContent, answer)
-        await send_mail(graph, subject, emailContent, EMAIL_ID)
-        with open(QUESTION_ID_TO_EMAIL_COMPLETED_FILE, "a") as f:
-            f.write(f"{questionId},{EMAIL_ID}\n")
-        # break only for demo
-        break
-        time.sleep(20)
-
+        for questionId, questionContent in filteredQuestionIdToContent.items():
+            answer = api_call(PREFACE, questionContent[1], MODEL)
+            subject, emailContent = formulate_email_content(questionContent, answer)
+            await send_mail(graph, subject, emailContent, EMAIL_ID)
+            with open(QUESTION_ID_TO_EMAIL_COMPLETED_FILE, "a") as f:
+                f.write(f"{questionId},{EMAIL_ID}\n")
+            # break only for demo
+            # break
+            time.sleep(20)
+        time.sleep(120)
 # Run main
 asyncio.run(main())
