@@ -1,5 +1,0 @@
-time python t5_vae.py --task train --dataset ir_txt
-notify "tmux 510 on idea2: something is done"
-
-# train 124m
-# test
