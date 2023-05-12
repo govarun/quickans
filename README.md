@@ -1,4 +1,6 @@
 # quickans
 
 ## Running the application
-- `python main.py` and choose any of the 5 options to test that functionality. 
+Run `quickAns.py` to start the application
+
+NOTE: Under Apache 2.0 License
